@@ -7,6 +7,8 @@
 import HeaderComponent from './components/HeaderComponent.vue';
 import { RouterView } from 'vue-router';
 
+
+
 </script>
 
 <style lang="scss">
