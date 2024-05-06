@@ -1,0 +1,20 @@
+@mixin flexRow(){
+    display: flex;
+    flex-direction: row;
+}
+@mixin flexCol(){
+    display: flex;
+    flex-direction: column;
+}
+@mixin dynamic-calc($property, $value) {
+    #{$property}: calc((#{$value} / 1440) * 100%);
+}
+@mixin dynamic-calc-local($property, $parent, $value){
+    #{$property}: calc((#{$value} / #{$parent}) * 100%);
+}
+@mixin linkView(){
+    text-decoration: none;
+    color: black;
+    text-wrap: nowrap;
+    
+}
