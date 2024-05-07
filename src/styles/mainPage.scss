@@ -1,3 +1,22 @@
+@import 'variables.scss';
+
+.product-features{
+    margin: 72px 120px 32px 120px;
+
+    .product-features__list{
+        list-style-type: none;
+
+        .product-features__item{
+            color: $smallText_7;
+        }
+    }
+
+    .item-extra-info{
+        margin: 20px 0 20px 0;
+        color: $smallText_7;
+    }
+}
+
 @import './mixins.scss';
 .titleBlock{
     display: flex;
