@@ -27,6 +27,7 @@ button{
 
     color: white;
     background-color: $prime ;
+    font-size: 16px;
     
 }
 </style>
