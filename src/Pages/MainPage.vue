@@ -24,7 +24,7 @@
                 </li>
             </ul>
         </div>
-        <Banner/>
+        <BannerComponent/>
         <CatalogComponent :status="'new'"/>
     </div>
 </template>
@@ -34,7 +34,7 @@ import { onMounted } from 'vue';
 import sliderComponent from '../components/SliderComponent.vue';
 import CatalogComponent from '@/components/CatalogComponent.vue';
 import { useCatalogStore } from '@/stores/catalog';
-import Banner from '@/components/Banner.vue'
+import BannerComponent from '@/components/BannerComponent.vue'
 
 const catalog = useCatalogStore()
 
