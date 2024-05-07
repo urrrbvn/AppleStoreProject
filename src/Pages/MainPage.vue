@@ -2,7 +2,7 @@
     <div class="main-page">
         <sliderComponent/>
         <article class="titleBlock">
-            <h1 class="titleBlock__text">Купить Iphone в Москве</h1>
+            <h1 class="titleBlock__text">Купить iPhone в Москве</h1>
         </article>
         <CatalogComponent :status="'popular'" />
         <CatalogComponent :status="'new'" />

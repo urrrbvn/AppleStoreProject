@@ -26,5 +26,10 @@ export const useCatalogStore = defineStore('catalog', () => {
     return sortedArr.slice(0, 12)
   })
 
-  return { allProducts, getProducts, getMostPopular }
+  const getNewest = computed(()=>{
+    // пока нет точного объекта продукта, поэтому пока просто подтягиваю 8 элементов
+    return allProducts.slice(0, 8)
+  })
+
+  return { allProducts, getProducts, getMostPopular, getNewest }
 })

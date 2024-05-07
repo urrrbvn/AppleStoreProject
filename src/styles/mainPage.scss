@@ -1,0 +1,12 @@
+@import './mixins.scss';
+.titleBlock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0 34px 0;
+    h1{
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 57.28px;
+    }
+}

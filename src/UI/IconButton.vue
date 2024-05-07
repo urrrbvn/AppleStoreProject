@@ -1,6 +1,6 @@
 <template>
     <button @click="test()">
-        <img :src="`/src/assets/images/${icon}.svg`" width="40px" height="40px">
+        <img :src="`/src/assets/images/${icon}.svg`" :width="`${size}px`" :height="`${size}px`">
     </button>
 </template>
 
@@ -8,13 +8,13 @@
 import { defineProps } from 'vue';
 
 const props = defineProps({
-    icon: String
+    icon: String,
+    size: Number
 })
 
 function test(){
     console.log('CLICK!');
 }
-
 </script>
 
 <style>

@@ -35,8 +35,8 @@
                             :color="'#0071E4'"
             />
             <SearchElement/>
-            <IconButton :icon="'likeIcon'"/>
-            <IconButton :icon="'compareIcon'"/>
+            <IconButton :icon="'likeIcon'" :size="48"/>
+            <IconButton :icon="'compareIcon'" :size="48"/>
             <ButtonWithIcon 
                          :icon="'cartIcon'" 
                          :title="'в корзине'"
@@ -74,6 +74,5 @@ const categories = ref([
 </script>
 
 <style lang="scss">
-@import '../styles/HeaderStyles.scss';
 
 </style>

@@ -1,14 +1,16 @@
 <template>
     <div class="catalog">
-        <div class="catalog__popular" v-if="status === 'popular'">
+       <span class="catalog__status" v-if="status === 'popular'">Самое популярное</span>
+       <span class="catalog__status" v-if="status === 'new'">Новинки</span>
+        <div class="catalog__grid" v-if="status === 'popular'">
             <CardComponent v-for="product in catalog.getMostPopular" 
-                           :title="product.title" 
-                           :img="product.image" 
-                           :price="product.price"
+                           :product="product"
             ></CardComponent>
         </div>
-        <div class="catalog__new" v-if="status === 'new'">
-            <h1>NEW</h1>
+        <div class="catalog__grid" v-if="status === 'new'">
+            <CardComponent v-for="product in catalog.getNewest"
+                           :product="product" 
+            ></CardComponent>
         </div>
     </div>
 
@@ -28,15 +30,7 @@ const catalog = useCatalogStore()
 
 <style lang="scss" scoped>
 @import '../styles/mixins.scss';
+@import '../styles/variables.scss';
 
-.catalog__popular{
-    width: 100%;
-    // background-color: red;
-    height: 800px;
-}
-.catalog__new{
-    width: 100%;
-    background-color: blue;
-}
 
 </style>
