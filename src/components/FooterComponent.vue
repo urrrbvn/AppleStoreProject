@@ -40,7 +40,6 @@
                 </div>
                 <a class="footer__callback" href="">Заказать звонок</a>
             </div>
-
             <div class="footer__adress">
                 <p class="footer__adress-text">Москва, ул Барклая 8</p>
                 <p class="footer__adress-text">Москва, ул Барклая 8</p>
@@ -59,5 +58,5 @@ import IconButton from '@/UI/IconButton.vue';
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/FooterStyle.scss';
+
 </style>

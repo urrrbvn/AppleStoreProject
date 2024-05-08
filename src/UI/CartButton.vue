@@ -1,6 +1,9 @@
 <template>
     <button class="cart-button" @click="btnHandler()" :style="backgroundStyles">
         <div class="cart-button__info">
+            <article class="cart-button__price">
+                <p>137 900 ₽</p>
+            </article>
             <figure class="cart-icon__icon">
                 <component :is="cartIcon"></component>
             </figure>
@@ -54,6 +57,11 @@ function btnHandler(){
         border-radius: 8px;
         color: white;
 
+        .cart-button__price{
+            display: none;
+            font-size: 20px;
+        }
+
         .cart-button__info{
             @include flexRow();
             align-items: center;
@@ -66,4 +74,25 @@ function btnHandler(){
             }
         }
     }
+
+@media (max-width: 768px) {
+    .cart-button{
+        height: 40px;
+        padding: 9px 9px;
+        display: flex;;
+        gap: 8px;
+
+        .cart-button__price{
+            display: block;
+            text-wrap: nowrap;
+        }
+        
+        .cart-button__info{
+
+            .cart-button__title{
+                display: none;
+            }
+        }
+    }
+}
 </style>
