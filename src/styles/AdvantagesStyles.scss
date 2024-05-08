@@ -1,0 +1,23 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+
+.advantages {
+    padding-top: 40px;
+    padding-bottom: 40px;
+        h1 {
+        text-align: center; 
+        font-weight: 700;
+        font-size: 32px;
+    }
+}
+
+.advantages__cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 24px;
+}
+
+

@@ -4,6 +4,7 @@
         <article class="titleBlock">
             <h1 class="titleBlock__text">Купить iPhone в Москве</h1>
         </article>
+<<<<<<< Updated upstream
         <CatalogComponent :status="'popular'" />
         <div class="product-features">
             <h1 class="product-features__title">Новые модели Айфонов по выгодным ценам</h1>
@@ -26,6 +27,11 @@
         </div>
         <BannerComponent/>
         <CatalogComponent :status="'new'"/>
+=======
+        <CatalogComponent :status="'popular'" />
+        <CatalogComponent :status="'new'" />
+        <AdvantagesComponent/>
+>>>>>>> Stashed changes
     </div>
 </template>
 
@@ -33,6 +39,7 @@
 import { onMounted } from 'vue';
 import sliderComponent from '../components/SliderComponent.vue';
 import CatalogComponent from '@/components/CatalogComponent.vue';
+import AdvantagesComponent from '@/components/AdvantagesComponent.vue';
 import { useCatalogStore } from '@/stores/catalog';
 import BannerComponent from '@/components/BannerComponent.vue'
 
