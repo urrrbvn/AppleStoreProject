@@ -4,7 +4,6 @@
         <article class="titleBlock">
             <h1 class="titleBlock__text">Купить iPhone в Москве</h1>
         </article>
-<<<<<<< Updated upstream
         <CatalogComponent :status="'popular'" />
         <div class="product-features">
             <h1 class="product-features__title">Новые модели Айфонов по выгодным ценам</h1>
@@ -27,9 +26,7 @@
         </div>
         <BannerComponent/>
         <CatalogComponent :status="'new'"/>
-=======
         <AdvantagesComponent/>
->>>>>>> Stashed changes
     </div>
 </template>
 
