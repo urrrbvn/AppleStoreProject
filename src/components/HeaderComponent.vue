@@ -30,11 +30,11 @@
     </header>
     <main class="control">
         <div class="control__buttons">
-            <ButtonWithIcon/>
+            <CatalogButton/>
             <SearchElement/>
             <IconButton :icon="'likeIcon'" :size="48"/>
             <IconButton :icon="'compareIcon'" :size="48"/>
-            <CartButtonHeader/>  
+            <AddToCartButton/>  
         </div>
         <div class="control__categories">
             <CategoryButton v-for="category in categories"
@@ -47,13 +47,13 @@
 </template>
 
 <script setup>
-import ButtonWithIcon from '../UI/ButtonWithIcon.vue'
+import CatalogButton from '../UI/CatalogButton.vue'
 import SearchElement from '../UI/SearchElement.vue'
 import IconButton from '../UI/IconButton.vue'
 import CategoryButton from '@/UI/CategoryButton.vue';
 import SpecialButton from '@/UI/SpecialButton.vue';
 import { ref } from 'vue';
-import CartButtonHeader from '@/UI/CartButtonHeader.vue';
+import AddToCartButton from '@/UI/AddToCartButton.vue';
 
 const categories = ref([
     {title: 'iPhone', icon:`iphoneIcon`},

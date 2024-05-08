@@ -11,7 +11,7 @@
                 <h4>{{ content }}</h4>
             </div>
         </div>
-        <CasualButton title="подробнее" style="width: 212px"/>
+        <CasualButton :theme="'clearWhite'" title="подробнее" style="width: 212px"/>
     </div>
 </template>
 

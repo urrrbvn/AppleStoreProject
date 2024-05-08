@@ -40,9 +40,6 @@
                 </div>
                 <a class="footer__callback" href="">Заказать звонок</a>
             </div>
-            <ButtonWithIcon :icon="'catalogIcon'"
-                            :title="'Каталог товаров'"
-            />
             <div class="footer__adress">
                 <p class="footer__adress-text">Москва, ул Барклая 8</p>
                 <p class="footer__adress-text">Москва, ул Барклая 8</p>
@@ -58,10 +55,8 @@
 
 <script setup>
 import IconButton from '@/UI/IconButton.vue';
-import ButtonWithIcon from "@/UI/ButtonWithIcon.vue";
-import CartButtonHeader from "@/UI/CartButtonHeader.vue";
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/FooterStyle.scss';
+
 </style>
