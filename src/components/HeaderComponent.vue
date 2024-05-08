@@ -30,19 +30,11 @@
     </header>
     <main class="control">
         <div class="control__buttons">
-            <ButtonWithIcon :icon="'catalogIcon'"
-                            :title="'Каталог товаров'"
-                            :color="'#0071E4'"
-            />
+            <CatalogButton/>
             <SearchElement/>
             <IconButton :icon="'likeIcon'" :size="48"/>
             <IconButton :icon="'compareIcon'" :size="48"/>
-            <ButtonWithIcon 
-                         :icon="'cartIcon'" 
-                         :title="'в корзине'"
-                         :color="'#52D116'"
-                         :special="1"
-            />  
+            <AddToCartButton/>  
         </div>
         <div class="control__categories">
             <CategoryButton v-for="category in categories"
@@ -55,19 +47,20 @@
 </template>
 
 <script setup>
-import ButtonWithIcon from '../UI/ButtonWithIcon.vue'
+import CatalogButton from '../UI/CatalogButton.vue'
 import SearchElement from '../UI/SearchElement.vue'
 import IconButton from '../UI/IconButton.vue'
 import CategoryButton from '@/UI/CategoryButton.vue';
 import SpecialButton from '@/UI/SpecialButton.vue';
 import { ref } from 'vue';
+import AddToCartButton from '@/UI/AddToCartButton.vue';
 
 const categories = ref([
-    {title: 'iPhone', icon:`iphoneIcon`},
-    {title: 'iPad', icon:`ipadIcon`},
-    {title: 'Macbook и iMac', icon:`macbookIcon`},
+    {title: 'iPhone', icon:`iPhoneIcon`},
+    {title: 'iPad', icon:`iPadIcon`},
+    {title: 'Macbook и iMac', icon:`macBookIcon`},
     {title: 'Watch', icon:`watchIcon`},
-    {title: 'Гаджеты', icon:`airpodsIcon`},
+    {title: 'Гаджеты', icon:`gadgetsIcon`},
     {title: 'Аксессуары', icon:`accessoiresIcon`},
 ])
 
@@ -76,3 +69,4 @@ const categories = ref([
 <style lang="scss">
 
 </style>
+
