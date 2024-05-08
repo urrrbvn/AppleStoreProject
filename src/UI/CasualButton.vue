@@ -1,17 +1,24 @@
 <template>
-    <button :style="{width: `${width}px`}">
+    <button :style="{width: `${width}px`}, themeColor">
         {{ title }}
     </button>
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
-
-
+import { defineProps, computed } from 'vue';
 
 const props = defineProps({
     title: String,
-    width: Number
+    width: Number,
+    theme: String,
+})
+
+const themeColor = computed(()=>{
+    if(theme == 'white'){
+        const backgroundColor = `white`
+    } else if(theme == 'blue'){
+        const backgroundColor = '$prime'
+    }
 })
 </script>
 

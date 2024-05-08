@@ -1,20 +1,29 @@
 <template>
-    <button class="button" :style="{ backgroundColor: color }">
-        <img class="button__icon" :src="`/src/assets/images/${icon}.svg`">
-        <span class="button__title">{{ title }}</span>
-        <p class="button__special" v-if="special">{{ special }}</p>
+    <button class="button" @click="btnHandler()" :style="backgroundStyles">
+        <img class="button__icon" :src="`/src/assets/images/catalogIcon.svg`">
+        <span class="button__title">Каталог товаров</span>
     </button>
+    <article class="catalog-button__title">  
+        <p v-if="catalogBtnClicked">Категории</p>
+    </article>
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { computed, ref } from 'vue';
 
-const props= defineProps({
-    title: String,
-    icon: String,
-    color: String,
-    special: Number
+const catalogBtnClicked = ref(false)
+
+const backgroundStyles = computed(()=>{
+    return{
+        backgroundColor: catalogBtnClicked.value ? '#9747FF' : ''
+    }
 })
+
+function btnHandler(){
+    console.log('123')
+    catalogBtnClicked.value = !catalogBtnClicked.value;
+    // далее будут добавлены функции связанные с логикой бэкэнда
+}
 </script>
 
 <style scoped lang="scss">
@@ -30,15 +39,10 @@ const props= defineProps({
     gap: 4px;
     color: white;
     border: none;
+    background-color: $prime;
 
     font-size: 20px;
     line-height: 23.87px;
-}
-.button__special{
-    padding: 4px 12px 4px 12px;
-    border-radius: 32px;
-    box-shadow: 0px 4px 4px 0px #00000040 inset;
-
 }
 
 </style>

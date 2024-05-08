@@ -30,19 +30,11 @@
     </header>
     <main class="control">
         <div class="control__buttons">
-            <ButtonWithIcon :icon="'catalogIcon'"
-                            :title="'Каталог товаров'"
-                            :color="'#0071E4'"
-            />
+            <ButtonWithIcon/>
             <SearchElement/>
             <IconButton :icon="'likeIcon'" :size="48"/>
             <IconButton :icon="'compareIcon'" :size="48"/>
-            <ButtonWithIcon 
-                         :icon="'cartIcon'" 
-                         :title="'в корзине'"
-                         :color="'#52D116'"
-                         :special="1"
-            />  
+            <CartButtonHeader/>  
         </div>
         <div class="control__categories">
             <CategoryButton v-for="category in categories"
@@ -61,6 +53,7 @@ import IconButton from '../UI/IconButton.vue'
 import CategoryButton from '@/UI/CategoryButton.vue';
 import SpecialButton from '@/UI/SpecialButton.vue';
 import { ref } from 'vue';
+import CartButtonHeader from '@/UI/CartButtonHeader.vue';
 
 const categories = ref([
     {title: 'iPhone', icon:`iphoneIcon`},
