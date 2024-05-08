@@ -63,11 +63,11 @@ import SpecialButton from '@/UI/SpecialButton.vue';
 import { ref } from 'vue';
 
 const categories = ref([
-    {title: 'iPhone', icon:`iphoneIcon`},
-    {title: 'iPad', icon:`ipadIcon`},
-    {title: 'Macbook и iMac', icon:`macbookIcon`},
+    {title: 'iPhone', icon:`iPhoneIcon`},
+    {title: 'iPad', icon:`iPadIcon`},
+    {title: 'Macbook и iMac', icon:`macBookIcon`},
     {title: 'Watch', icon:`watchIcon`},
-    {title: 'Гаджеты', icon:`airpodsIcon`},
+    {title: 'Гаджеты', icon:`gadgetsIcon`},
     {title: 'Аксессуары', icon:`accessoiresIcon`},
 ])
 
@@ -76,3 +76,4 @@ const categories = ref([
 <style lang="scss">
 
 </style>
+

@@ -6,10 +6,9 @@
 
     height: 94px;
     padding: 23px 130px 31px 130px;
-    // margin: 0 130px;
-    // justify-content: space-between;
+
+    justify-content: space-between;
     align-items: center;
-    // border: 1px solid black;   
 
     .header__logo{
         @include dynamic-calc(margin-right, 31)
@@ -87,12 +86,14 @@
         gap: 24px;
         padding: 22px 0 22px 0;
         align-items: center;
-        margin-left: 120px;
+        justify-content: space-between;
+        margin: 0 120px 0 120px
     }
     .control__categories{
         @include flexRow();
         gap: 16px;
         padding: 12px 0 20px 0;
         margin: 0 120px;
+        justify-content: space-between;
     }
 }
