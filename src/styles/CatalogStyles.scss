@@ -1,19 +1,24 @@
 @import './mixins.scss';
 @import './variables.scss';
 
-
 .catalog{
     padding-top: 32px;
     padding-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 .catalog__status{
+    @include dynamic-calc(margin-left, 120);
     color: $prime;
     font-size: 24px;
-    margin-left: 120px;
+
 }
 .catalog__grid{
     width: 100%;
-    justify-content: center;
+    @include dynamic-calc(padding-left, 120);
+    @include dynamic-calc(padding-right, 120);
+    justify-content: space-between;
     display: grid;
     grid-template-columns: repeat(4, 282px);
     gap: 24px;
