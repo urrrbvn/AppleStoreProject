@@ -44,17 +44,13 @@
                 <p class="footer__adress-text">Москва, ул Барклая 8</p>
                 <p class="footer__adress-text">Москва, ул Барклая 8</p>
             </div>
-            <figure class="footer__icons">
-                <IconButton :icon="'whatsappIcon'" :size="32"></IconButton>
-                <IconButton :icon="'telegramIcon'" :size="32"></IconButton>
-                <IconButton :icon="'vkontakteIcon'" :size="32"></IconButton>
-            </figure>
+            <SocialMediaIcons/>
         </div>
     </div>
 </template>
 
 <script setup>
-import IconButton from '@/UI/IconButton.vue';
+import SocialMediaIcons from '@/UI/SocialMediaIcons.vue';
 </script>
 
 <style lang="scss" scoped>
