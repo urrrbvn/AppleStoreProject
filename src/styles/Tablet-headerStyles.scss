@@ -11,9 +11,8 @@
         border-radius: 0 0 24px 24px;
         padding: 16px 173px 24px 24px;
         .tablet-header__nav-list{
-            // justify-content: space-around;
             flex-wrap:wrap;
-            align-items: start;
+            align-items: center;
             gap: 24px;
             @include flexRow();
             width: 100%;
