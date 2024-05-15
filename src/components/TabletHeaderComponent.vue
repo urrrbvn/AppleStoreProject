@@ -10,6 +10,7 @@
                     <img src="../assets/images/PhoneIcon.svg" width="24px" height="24px">
                     <span>+7 812 561 96 62</span>
                 </a>
+                <a class="tablet-header__phone-link" href="" v-if="BurgerActive === true">Вам перезвонить?</a>
             </div>
             <button class="tablet-header__burger" @click="burgerBtnHandler()">
                 <img src="../assets/images/BurgerOpenIcon.svg" v-if="BurgerActive === false">
@@ -17,8 +18,8 @@
             </button>
         </div>
         <div class="tablet-header__menu" v-if="BurgerActive === true">
-            <nav class="header__nav">
-                <ul class="header__nav-list">
+            <nav class="tablet-header__nav">
+                <ul class="tablet-header__nav-list">
                     <li class="header__nav-item"><a class="header__nav-link" href="">Весь каталог</a></li>
                     <li class="header__nav-item special">
                         <img class="header__nav-icon" src="../assets/images/fireIcon.svg" alt="">
@@ -30,9 +31,9 @@
                     <li class="header__nav-item"><a class="header__nav-link" href="">Доставка и оплата</a></li>
                     <li class="header__nav-item"><a class="header__nav-link" href="">Отзывы</a></li>
                     <li class="header__nav-item"><a class="header__nav-link" href="">Контакты</a></li>
+                    <SocialMediaIcons/>
                 </ul>
             </nav>
-            
         </div>
     </header>
 </template>
@@ -41,6 +42,7 @@
 <script setup>
 import SearchElement from '../UI/SearchElement.vue';
 import { ref, watch } from "vue";
+import SocialMediaIcons from '../UI/SocialMediaIcons.vue';
 
 const BurgerActive = ref(false)
 

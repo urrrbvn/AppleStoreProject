@@ -19,33 +19,33 @@
     .header__logo{
         @include dynamic-calc(margin-right, 31)
     }
-    .header__phone{
-        @include flexCol();
-        @include dynamic-calc(margin-left, 28);
+}
+.header__phone{
+    @include flexCol();
+    @include dynamic-calc(margin-left, 28);
+
+    align-self: normal;
+    padding-top: 9px;
     
-        align-self: normal;
-        padding-top: 9px;
-        
 
+    gap: 4px;
+
+    .header__phone-content{
+        @include flexRow();
+        @include linkView();
         gap: 4px;
-
-        .header__phone-content{
-            @include flexRow();
-            @include linkView();
-            gap: 4px;
-            font-size: 20px;
-            line-height: 24px;
-            align-items: center;
-            justify-content: center;
-        }
-        .header__phone-link{
-            @include linkView();
-            color: $prime;
-            text-align: end;
-            font-size: 16px;
-            line-height: 19px;
-        }
-    }   
+        font-size: 20px;
+        line-height: 24px;
+        align-items: center;
+        justify-content: center;
+    }
+    .header__phone-link{
+        @include linkView();
+        color: $prime;
+        text-align: end;
+        font-size: 16px;
+        line-height: 19px;
+    }
 }
 .special{
     // @include dynamic-calc(width, 87);
@@ -85,27 +85,27 @@
 .header__nav{
     @include flexRow();
     align-items: center;
-    .header__nav-list{
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 5px;
-        @include flexRow();
-        width: 100%;
-        list-style-type: none;
+}
+.header__nav-list{
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 5px;
+    @include flexRow();
+    width: 100%;
+    list-style-type: none;
 
-        .header__nav-link{
-            @include linkView();
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 21.48px;
-            // padding: 0 4px;
+}
+.header__nav-link{
+    @include linkView();
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.48px;
+    // padding: 0 4px;
 
-        }
-        .header__nav-link:hover{
+}
+.header__nav-link:hover{
 
-            color: $prime;
-            border-bottom: 1px solid $prime;
+    color: $prime;
+    border-bottom: 1px solid $prime;
 
-        }
-    }
 }
