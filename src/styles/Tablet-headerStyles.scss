@@ -1,0 +1,28 @@
+@import '../styles/mixins.scss';
+@import '../styles/variables.scss';
+
+.tablet-header{
+    @include flexCol();
+    .tablet-header__control{
+        @include flexRow();
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 4px 24px;
+        .tablet-header__phone{
+            @include flexCol();
+            .tablet-header__phone-content{
+                @include flexRow();
+                @include linkView();
+                gap: 4px;
+                font-size: 20px;
+                line-height: 24px;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .tablet-header__burger{
+            margin-left: 40px;
+        }  
+    } 
+}

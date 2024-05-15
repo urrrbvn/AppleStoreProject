@@ -1,6 +1,6 @@
 <template>
     <button class="category">
-        <component class="category__icon" :is="icon" :icon="props.icon"></component>
+        <component class="category__icon" :is="icon" :icon="props.icon" :paintType="stroke"></component>
         <span class="category__title">{{ title }}</span>
     </button>
 </template>
@@ -37,7 +37,7 @@ const icon = shallowRef(CategoryIcon)
     color: $prime ;
     svg{
         path{
-            fill: $prime;
+            color: $prime;
             stroke: $prime;
         }
     }
