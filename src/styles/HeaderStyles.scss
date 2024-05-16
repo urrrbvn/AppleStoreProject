@@ -3,68 +3,49 @@
 
 .header{
     @include flexRow();
+    // @include dynamic-calc(margin-left, 120);
+    // @include dynamic-calc(margin-right, 120);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
 
     height: 94px;
-    padding: 23px 130px 31px 130px;
+    padding: 23px 0;
+
 
     justify-content: space-between;
     align-items: center;
 
     .header__logo{
-        @include dynamic-calc(margin-right, 31)
+        // @include dynamic-calc(margin-right, 31)
     }
+}
+.header__phone{
+    @include flexCol();
+    @include dynamic-calc(margin-left, 28);
 
-    .header__nav{
+    align-self: normal;
+    padding-top: 9px;
+    
+
+    gap: 4px;
+
+    .header__phone-content{
         @include flexRow();
-        align-items: center;
-        .header__nav-list{
-    
-            @include flexRow();
-            gap: 20px;
-            list-style-type: none;
-    
-            .header__nav-link{
-                @include linkView();
-                font-size: 18px;
-                font-weight: 400;
-                line-height: 21.48px;
-                // padding: 0 4px;
-    
-            }
-            .header__nav-link:hover{
-    
-                color: $prime;
-                border-bottom: 1px solid $prime;
-    
-            }
-        }
-    }
-    .header__phone{
-        @include flexCol();
-        @include dynamic-calc(margin-left, 28);
-        align-self: normal;
-        padding-top: 9px;
-        
-
+        @include linkView();
         gap: 4px;
-
-        .header__phone-content{
-            @include flexRow();
-            @include linkView();
-            gap: 4px;
-            font-size: 20px;
-            line-height: 24px;
-            align-items: center;
-            justify-content: center;
-        }
-        .header__phone-link{
-            @include linkView();
-            color: $prime;
-            text-align: end;
-            font-size: 16px;
-            line-height: 19px;
-        }
-    }   
+        font-size: 20px;
+        line-height: 24px;
+        align-items: center;
+        justify-content: center;
+    }
+    .header__phone-link{
+        @include linkView();
+        color: $prime;
+        text-align: end;
+        font-size: 16px;
+        line-height: 19px;
+    }
 }
 .special{
     // @include dynamic-calc(width, 87);
@@ -80,20 +61,50 @@
 }
 .control{
     @include flexCol();
-    width: 100%;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
     .control__buttons{
         @include flexRow();
-        gap: 24px;
+        // gap: 24px;
         padding: 22px 0 22px 0;
         align-items: center;
         justify-content: space-between;
-        margin: 0 120px 0 120px
+        // margin-left: auto;
+        // margin-right:auto;
+        // max-width: 1160px;
     }
     .control__categories{
         @include flexRow();
-        gap: 16px;
+        // gap: 16px;
         padding: 12px 0 20px 0;
-        margin: 0 120px;
+        // margin: 0 120px;
         justify-content: space-between;
     }
+}
+.header__nav{
+    @include flexRow();
+    align-items: center;
+}
+.header__nav-list{
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    @include flexRow();
+    list-style-type: none;
+
+}
+.header__nav-link{
+    @include linkView();
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.48px;
+    // padding: 0 4px;
+
+}
+.header__nav-link:hover{
+
+    color: $prime;
+    border-bottom: 1px solid $prime;
+
 }

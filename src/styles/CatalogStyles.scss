@@ -2,27 +2,33 @@
 @import './variables.scss';
 
 .catalog{
+    @include dynamic-calc(margin-inline, 120);
     padding-top: 32px;
     padding-bottom: 32px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
     gap: 24px;
 }
 .catalog__status{
-    @include dynamic-calc(margin-left, 120);
     color: $prime;
     font-size: 24px;
+    align-self: flex-start;
 
 }
 .catalog__grid{
     width: 100%;
-    @include dynamic-calc(padding-left, 120);
-    @include dynamic-calc(padding-right, 120);
-    justify-content: space-between;
+    justify-content: center;
     display: grid;
-    grid-template-columns: repeat(4, 282px);
+    grid-template-columns: repeat(auto-fill, 282px);
     gap: 24px;
 }
 .catalog__new{
     width: 100%;
+}
+@media (max-width: 1200px) {
+    .catalog__grid{
+        gap: 40px
+    }    
 }

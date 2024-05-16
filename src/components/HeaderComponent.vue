@@ -3,6 +3,7 @@
         <figure class="header__logo">
             <img class="header__logo-image" src="../assets/images/AppleLogo.svg" width="40px" height="40px">
         </figure>
+        <!-- <button @click="()=>console.log(windowWidth)">TEST</button> -->
         <nav class="header__nav">
             <ul class="header__nav-list">
                 <li class="header__nav-item"><a class="header__nav-link" href="">Весь каталог</a></li>
@@ -55,6 +56,7 @@ import SpecialButton from '@/UI/SpecialButton.vue';
 import { ref } from 'vue';
 import AddToCartButton from '@/UI/AddToCartButton.vue';
 
+
 const categories = ref([
     {title: 'iPhone', icon:`iPhoneIcon`},
     {title: 'iPad', icon:`iPadIcon`},
@@ -65,8 +67,4 @@ const categories = ref([
 ])
 
 </script>
-
-<style lang="scss">
-
-</style>
 

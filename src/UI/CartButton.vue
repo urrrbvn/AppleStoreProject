@@ -75,7 +75,7 @@ function btnHandler(){
         }
     }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .cart-button{
         height: 40px;
         padding: 9px 9px;
