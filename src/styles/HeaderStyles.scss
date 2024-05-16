@@ -7,7 +7,7 @@
     // @include dynamic-calc(margin-right, 120);
     margin-left: auto;
     margin-right: auto;
-    max-width: 1160px;
+    max-width: 1200px;
 
     height: 94px;
     padding: 23px 0;
@@ -17,7 +17,7 @@
     align-items: center;
 
     .header__logo{
-        @include dynamic-calc(margin-right, 31)
+        // @include dynamic-calc(margin-right, 31)
     }
 }
 .header__phone{
@@ -61,7 +61,7 @@
 }
 .control{
     @include flexCol();
-    max-width: 1160px;
+    max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
     .control__buttons{
@@ -89,9 +89,8 @@
 .header__nav-list{
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 20px;
     @include flexRow();
-    width: 100%;
     list-style-type: none;
 
 }
