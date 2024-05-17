@@ -3,8 +3,6 @@
 
 .header{
     @include flexRow();
-    // @include dynamic-calc(margin-left, 120);
-    // @include dynamic-calc(margin-right, 120);
     margin-left: auto;
     margin-right: auto;
     max-width: 1200px;
@@ -15,10 +13,6 @@
 
     justify-content: space-between;
     align-items: center;
-
-    .header__logo{
-        // @include dynamic-calc(margin-right, 31)
-    }
 }
 .header__phone{
     @include flexCol();
@@ -66,19 +60,17 @@
     margin-left: auto;
     .control__buttons{
         @include flexRow();
-        // gap: 24px;
+
         padding: 22px 0 22px 0;
         align-items: center;
         justify-content: space-between;
-        // margin-left: auto;
-        // margin-right:auto;
-        // max-width: 1160px;
+
     }
     .control__categories{
         @include flexRow();
-        // gap: 16px;
+        
         padding: 12px 0 20px 0;
-        // margin: 0 120px;
+        
         justify-content: space-between;
     }
 }
@@ -99,7 +91,6 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 21.48px;
-    // padding: 0 4px;
 
 }
 .header__nav-link:hover{
