@@ -4,12 +4,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+@import './blockStyles/AdvantagesStyles.scss';
+@import './blockStyles/CatalogStyles.scss';
+@import './blockStyles/FooterStyle.scss';
+@import './blockStyles/HeaderStyles.scss';
+@import './blockStyles/MobileMenuStyles.scss';
+@import './blockStyles/Tablet-headerStyles.scss';
 
-// @import './mixins.scss';
-// @import './variables.scss';
-@import './CatalogStyles.scss';
-@import './HeaderStyles.scss';
-@import './mainPage.scss';
-@import './AdvantagesStyles.scss';
-@import './FooterStyle.scss';
-@import './Tablet-headerStyles.scss';
+@import './pagesStyles/mainPage.scss';
