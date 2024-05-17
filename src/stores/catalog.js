@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 
 export const useCatalogStore = defineStore('catalog', () => {
   const allProducts = reactive([])
-  
+
   function getProducts(){
     let products = []
     for(let i = 0; i < 30; i++){
@@ -31,5 +31,18 @@ export const useCatalogStore = defineStore('catalog', () => {
     return allProducts.slice(0, 8)
   })
 
-  return { allProducts, getProducts, getMostPopular, getNewest }
+  function getSearchProducts(str){
+    if(str.length > 0) {
+      let result = allProducts.filter(product =>
+        product.title.toLowerCase().includes(str.toLowerCase())
+      )
+      console.log(str)
+      return result
+    } 
+    if(str.length === 0) {
+      return []
+    }
+  }
+
+  return { allProducts, getProducts, getMostPopular, getNewest, getSearchProducts}
 })
