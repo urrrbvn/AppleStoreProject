@@ -35,10 +35,14 @@ const icon = shallowRef(CategoryIcon)
 }
 .category:hover{
     color: $prime ;
-    svg{
+    .stroke{
         path{
-            color: $prime;
             stroke: $prime;
+        }
+    }
+    .fill{
+        path{
+            fill: $prime;
         }
     }
 }
