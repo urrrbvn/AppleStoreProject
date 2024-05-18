@@ -35,7 +35,7 @@
             <SearchElement/>
             <IconButton :icon="'likeIcon'" :size="48"/>
             <IconButton :icon="'compareIcon'" :size="48"/>
-            <AddToCartButton/>  
+            <CartButton/>  
         </div>
         <div class="control__categories">
             <CategoryButton v-for="category in categories"
@@ -54,7 +54,7 @@ import IconButton from '../UI/IconButton.vue'
 import CategoryButton from '@/UI/CategoryButton.vue';
 import SpecialButton from '@/UI/SpecialButton.vue';
 import { ref } from 'vue';
-import AddToCartButton from '@/UI/AddToCartButton.vue';
+import CartButton from '@/UI/CartButton.vue';
 
 
 const categories = ref([

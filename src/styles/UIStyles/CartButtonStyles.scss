@@ -1,48 +1,55 @@
-@import '@/styles/mixins.scss';
 @import '@/styles/variables.scss';
-    .cart-button{
+@import '@/styles/mixins.scss';
 
-        padding: 16px 76.5px;
-        
-        background-color: $prime;
-        border-radius: 8px;
-        color: white;
+.cart-button{
+	@include flexRow();
+  	padding: 12px 16px;
+  	border-radius: 16px;
+  	align-items: center;
+  	justify-content: center;
+  	gap: 4px;
+  	color: white;
+  	border: none;  
+  	font-size: 20px;
+  	line-height: 23.87px;
+	background-color: #52D116;
+}
+.cart-button__counter{
+  	padding: 4px 12px 4px 12px;
+  	border-radius: 32px;
+  	box-shadow: 0px 4px 4px 0px #00000040 inset;
 
-        .cart-button__price{
-            display: none;
-            font-size: 20px;
-        }
-
-        .cart-button__info{
-            @include flexRow();
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-
-            .cart-button__title{
-                font-size: 18px;
-                font-weight: 500;
-            }
-        }
-    }
-
+}
 @media (max-width: 1200px) {
-    .cart-button{
-        height: 40px;
-        padding: 9px 9px;
-        display: flex;;
-        gap: 8px;
-
-        .cart-button__price{
-            display: block;
-            text-wrap: nowrap;
-        }
-        
-        .cart-button__info{
-
-            .cart-button__title{
-                display: none;
-            }
-        }
-    }
+	.cart-button{
+		background-color: transparent;
+		gap: 8px;
+		color: $smallText_6;
+		padding: 8px;
+		width: 168px;
+        justify-content: start;
+	}
+	.cart-button__counter{
+		display: none;
+	}
+	.cart-button__icon{
+		width: 32px;
+		height: 32px;
+		svg{
+			path{
+				fill: $smallText_6;
+			}
+		}
+	}
+}
+@media (max-width: 768px){
+	.cart-button{
+		flex-direction: column;
+		gap: 0;
+		width: auto;
+		justify-content: center;
+		align-items: center;
+		color: black;
+	}
+	
 }

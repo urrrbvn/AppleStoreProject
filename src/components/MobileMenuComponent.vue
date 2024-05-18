@@ -1,9 +1,17 @@
 <template>
     <div class="mobile-menu">
-        <CatalogButton/>
-        <CartButton/>
-        <IconButton :icon="likeIcon" :size="32"/>        
-        <IconButton :icon="compareIcon" :size="32"/>        
+        <div class="mobile-menu__items">
+            <CatalogButton/>
+            <CartButton/>
+            <div class="icon-button-wrapper">
+                <IconButton :icon="'likeIcon'" :size="32"/>
+                <span>избранное</span>        
+            </div>
+            <div class="icon-button-wrapper">
+                <IconButton :icon="'compareIcon'" :size="32"/>
+                <span>сравнение</span>        
+            </div>
+        </div>
     </div>
 </template>
 

@@ -2,7 +2,7 @@
   <HeaderComponent v-if="windowWidth > 1200"/>
   <TabletHeaderComponent v-if="windowWidth < 1200 && windowWidth > 768" />
   <RouterView></RouterView>
-  <!-- <MobileMenuComponent/> -->
+  <MobileMenuComponent v-if="windowWidth < 1200"/>
   <FooterComponent></FooterComponent>
 </template>
 
