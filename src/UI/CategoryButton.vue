@@ -21,30 +21,3 @@ const props = defineProps({
 const icon = shallowRef(CategoryIcon)
 
 </script>
-
-<style lang="scss">
-@import '../styles/mixins.scss';
-@import '../styles/variables.scss';
-
-.category{
-    @include flexRow();
-    gap: 8px;
-    font-size: 20px;
-    font-weight: 400;
-    text-wrap: nowrap;
-}
-.category:hover{
-    color: $prime ;
-    .stroke{
-        path{
-            stroke: $prime;
-        }
-    }
-    .fill{
-        path{
-            fill: $prime;
-        }
-    }
-}
-
-</style>
