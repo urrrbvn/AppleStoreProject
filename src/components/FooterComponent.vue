@@ -44,13 +44,13 @@
                 <p class="footer__adress-text">Москва, ул Барклая 8</p>
                 <p class="footer__adress-text">Москва, ул Барклая 8</p>
             </div>
-            <SocialMediaIcons/>
+            <SocialMediaLinks/>
         </div>
     </div>
 </template>
 
 <script setup>
-import SocialMediaIcons from '@/UI/SocialMediaIcons.vue';
+import SocialMediaLinks from '@/UI/SocialMediaLinks.vue';
 </script>
 
 <style lang="scss" scoped>

@@ -31,7 +31,7 @@
                     <li class="header__nav-item"><a class="header__nav-link" href="">Доставка и оплата</a></li>
                     <li class="header__nav-item"><a class="header__nav-link" href="">Отзывы</a></li>
                     <li class="header__nav-item"><a class="header__nav-link" href="">Контакты</a></li>
-                    <SocialMediaIcons/>
+                    <SocialMediaLinks/>
                 </ul>
             </nav>
         </div>
@@ -42,7 +42,7 @@
 <script setup>
 import SearchElement from '../UI/SearchElement.vue';
 import { ref, watch } from "vue";
-import SocialMediaIcons from '../UI/SocialMediaIcons.vue';
+import SocialMediaLinks from '../UI/SocialMediaLinks.vue';
 
 const BurgerActive = ref(false)
 

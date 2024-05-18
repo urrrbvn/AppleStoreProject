@@ -1,5 +1,5 @@
-@import '../styles/mixins.scss';
-@import '../styles/variables.scss';
+@import '../mixins.scss';
+@import '../variables.scss';
 
 .tablet-header{
     @include flexCol();
@@ -48,6 +48,9 @@
         }
         .tablet-header__burger{
             margin-left: 40px;
+            background-color: transparent;
+            border: none;
+
         }  
     } 
 }
