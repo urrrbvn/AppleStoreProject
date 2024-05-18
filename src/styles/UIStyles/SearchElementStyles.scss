@@ -1,0 +1,85 @@
+@import '@/styles/mixins.scss';
+@import '@/styles/variables.scss';
+
+.input-block{
+    @include flexRow();
+    @include dynamic-calc-local(width, 1200 ,594);
+    padding: 16px 24px;
+    border: 1px solid #B7B7B7;
+    border-radius: 8px;
+    gap: 8px;
+    .input-block__item{
+        width: 100%;
+        border: none;
+        font-size: 20px;
+        font-weight: 400;
+        outline: none;
+    }
+}
+
+.toggled-block{
+    position: absolute;
+    z-index: 2;
+    max-width: 594px;
+    top: 180px;
+    right: 720px;
+    height: 480px;
+    background-color: white;
+    border-radius: 10px;
+    overflow-y: scroll;
+    margin-inline: auto;
+
+    &::-webkit-scrollbar{
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background-color: #E1E1E1;
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-track{
+        background: #F9F9F9;
+        border-radius: 8px;
+        margin-bottom: 36px;
+        margin-top: 36px;
+    }
+
+    .search-result{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        height: 96px;
+        padding-right: 20px;
+        padding-left: 32px;
+    }
+    .search-result__text{
+        flex-grow: 1;
+    
+        h2{
+            font-size: 20px;
+            font-weight: 400;
+        }
+        p{
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+    a{
+        color: $prime;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 1200px){
+    .searchIcon{
+        path{
+            stroke: black;
+        }
+    }
+    .input-block{
+        width: 100%;
+        border: none;
+    }
+}

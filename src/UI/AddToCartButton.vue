@@ -12,7 +12,7 @@ let counter = 1
 
 </script>
 
-<style scoped lang="scss">
+<!-- <style scoped lang="scss">
 @import '../styles/variables.scss';
 @import '../styles/mixins.scss';
 
@@ -36,4 +36,4 @@ let counter = 1
 
 }
 
-</style>
+</style> -->

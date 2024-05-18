@@ -14,18 +14,3 @@ const props = defineProps({
 
 
 </script>
-
-<style scoped lang="scss">
-    .stars-container{
-        display: flex;
-        align-items: center;
-        font-size: 21px;
-
-    }
-    .fa-star{
-        color: #DBDBDB;
-    }
-    .active{
-        color: #FFAD31;
-    }
-</style>

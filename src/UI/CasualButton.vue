@@ -1,5 +1,5 @@
 <template>
-    <button :style="buttonStyles">
+    <button class="casualBtn" :style="buttonStyles">
         {{ title }}
     </button>
 </template>
@@ -40,19 +40,3 @@ const buttonStyles = computed(()=>{
 })
 </script>
 
-<style scoped lang="scss">
-@import '../styles/mixins.scss';
-@import '../styles/variables.scss';
-button{
-    @include flexRow();
-    align-items: center;
-    justify-content: center;
-    height: 56px;
-    border-radius: 8px;
-
-    color: white;
-    background-color: $prime;
-    font-size: 16px;
-    
-}
-</style>

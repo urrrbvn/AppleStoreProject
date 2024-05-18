@@ -46,7 +46,7 @@ function btnHandler(){
 }
 </script>
 
-<style lang="scss" scoped>
+<!-- <style lang="scss">
 @import '../styles/mixins.scss';
 @import '../styles/variables.scss';
     .cart-button{
@@ -95,4 +95,4 @@ function btnHandler(){
         }
     }
 }
-</style>
+</style> -->
