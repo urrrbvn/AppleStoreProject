@@ -3,15 +3,17 @@
 .footer{
     display: flex;
     height: 309px;
-    justify-content: space-evenly;
-    padding-left: 120px;
-
+    // justify-content: space-between;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
     .footer__branding{
         display: flex;
         flex-direction: column;
         width: 273px;
         padding-top: 30px;
         gap: 27px;
+        margin-right: 48px;
         .footer__branding-text{
             color: $smallText_5;
             display: flex;
@@ -29,6 +31,7 @@
         padding-top: 40px;
         display: flex;
         gap: 16px;
+        margin-right: 40px;
         .footer__services-list{
             list-style-type: none;
             display: flex;
@@ -46,6 +49,7 @@
 
     .footer__products{
         padding-top: 40px;
+        margin-right: 155px;
         .footer__products-list{
             list-style-type: none;
             display: flex;
@@ -64,7 +68,6 @@
 
 .footer__contact{
     padding-top: 31px;
-    padding-right: 155px;
     .footer__contact-info{
         display: flex;
         flex-direction: column;
@@ -96,12 +99,98 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
-        margin-top: 40px;
+        padding-top: 40px;
     }
     
     .social-media-icons{
         position: relative;
         bottom: 120px;
         left: 169px;
+    }
+}
+
+@media (max-width:1200px) {
+    .footer{
+        flex-direction: column;
+        margin-left: 24px;
+        padding-top: 32px;
+        .footer__branding{
+            flex-direction: row;
+            width: 504px;
+
+            .footer__branding-text{
+                .footer__span{
+                    margin: 0;
+                }
+            }
+        }
+
+        .footer__services{
+            margin: 0;
+            padding-top: 32px;
+            max-width: 591px;
+            .footer__services-list{
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+
+        .footer__products{
+            margin: 0;
+            padding-top: 32px;
+            .footer__products-list{
+                flex-direction: row;
+            }
+        }
+
+        .footer__contact{
+            padding-top: 32px;
+            .footer__contact-info{
+                gap: 0;
+                .footer__phone-container{
+                    display: flex;
+                    align-items: center;
+                    height: auto;
+                    max-width: 542px;
+                    gap: 16px;
+                    .footer__phone-number{
+                        font-size: 32px;
+                    }
+                }
+
+                .footer__callback{
+                    padding-top: 20px;
+                    font-size: 16px;
+                }
+            }
+
+            .footer__adress{
+                padding-top: 33px;
+                gap: 8px;
+            }
+            
+            .social-media-icons{
+                bottom: 150px;
+                right: 0;
+                left: 605px;
+            }
+        }
+    }
+}
+
+@media (max-width:320px){
+    .footer{
+        margin-left: 24px;
+
+        .footer__branding{
+            align-items: center;
+            padding-right: 67px;
+            padding-left: 67px;
+            max-width: 320px;
+
+            .footer__branding-text{
+                flex-wrap: wrap;
+            }
+        }
     }
 }

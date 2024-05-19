@@ -35,8 +35,10 @@
             <div class="footer__contact-info">
                 <div class="footer__phone-container">
                     <a href="tel:+78127048697" class="footer__phone-number">+7 812 704 86 97</a>
-                    <p class="footer__phone-description">Бесплатная консультация</p>
-                    <p class="footer__phone-description">С 10:00 до 21:00, без выходных</p>
+                    <article class="footer__phone-text">
+                        <p class="footer__phone-description">Бесплатная консультация</p>
+                        <p class="footer__phone-description">С 10:00 до 21:00, без выходных</p>
+                    </article>
                 </div>
                 <a class="footer__callback" href="">Заказать звонок</a>
             </div>
