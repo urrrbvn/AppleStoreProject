@@ -1,0 +1,28 @@
+@import '@/styles/mixins.scss';
+@import '@/styles/variables.scss';
+
+.category{
+    @include flexRow();
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 400;
+    text-wrap: nowrap;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.category:hover{
+    color: $prime ;
+    .stroke{
+        path{
+            stroke: $prime;
+        }
+    }
+    .fill{
+        path{
+            fill: $prime;
+        }
+    }
+}

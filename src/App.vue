@@ -2,6 +2,7 @@
   <HeaderComponent v-if="windowWidth > 1200"/>
   <TabletHeaderComponent v-if="windowWidth < 1200 && windowWidth > 768" />
   <RouterView></RouterView>
+  <MobileMenuComponent v-if="windowWidth < 1200"/>
   <FooterComponent></FooterComponent>
 </template>
 
@@ -10,7 +11,9 @@ import HeaderComponent from './components/HeaderComponent.vue';
 import { RouterView } from 'vue-router';
 import FooterComponent from './components/FooterComponent.vue'
 import { ref, onMounted, onUnmounted } from 'vue';
-import TabletHeaderComponent from './components/TabletHeaderComponent.vue'
+import TabletHeaderComponent from './components/TabletHeaderComponent.vue';
+import MobileMenuComponent from './components/MobileMenuComponent.vue';
+
 
 
 const windowWidth = ref(window.innerWidth);

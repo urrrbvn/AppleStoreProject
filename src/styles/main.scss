@@ -4,12 +4,27 @@
     padding: 0;
     box-sizing: border-box;
 }
+// импорты стилей для блоков
+@import './blockStyles/AdvantagesStyles.scss';
+@import './blockStyles/CatalogStyles.scss';
+@import './blockStyles/FooterStyle.scss';
+@import './blockStyles/HeaderStyles.scss';
+@import './blockStyles/MobileMenuStyles.scss';
+@import './blockStyles/Tablet-headerStyles.scss';
 
-// @import './mixins.scss';
-// @import './variables.scss';
-@import './CatalogStyles.scss';
-@import './HeaderStyles.scss';
-@import './mainPage.scss';
-@import './AdvantagesStyles.scss';
-@import './FooterStyle.scss';
-@import './Tablet-headerStyles.scss';
+// импорты стилей для страниц
+@import './pagesStyles/mainPage.scss';
+
+// импорты стилей UI компонентов
+@import './UIStyles/AddToCartButtonStyles.scss';
+@import './UIStyles/CartButtonStyles.scss';
+@import './UIStyles/CasualButtonStyle.scss';
+@import './UIStyles/CatalogButtonStyles.scss';
+@import './UIStyles/CategoryButtonStyles.scss';
+@import './UIStyles/IconButtonStyles.scss';
+@import './UIStyles/SearchElementStyles.scss';
+@import './UIStyles/SocialMediaLinksStyles.scss';
+@import './UIStyles/SpecialButtonStyles.scss';
+@import './UIStyles/StarsComponentStyles.scss';
+
+

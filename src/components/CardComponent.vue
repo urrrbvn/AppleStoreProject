@@ -30,14 +30,14 @@
         <div class="card__price" v-if="product.availible === true">
             <p class="card__price-old" v-if="product.discountPrice">{{ product.price }}₽</p>
             <p class="card__price-actual" v-if="windowWidth > 1200">{{ product.discountPrice ? product.discountPrice : product.price }}₽</p>
-            <CartButton v-if="windowWidth < 1200"/>
+            <AddToCartButton v-if="windowWidth < 1200"/>
         </div>
         <div class="card__not-availible-message" v-if="product.availible === false">
             <p>
                 Мы можем сообщить вам, когда товар появится в наличии
             </p>
         </div>
-        <CartButton v-if="product.availible === true && windowWidth > 1200"/>
+        <AddToCartButton v-if="product.availible === true && windowWidth > 1200"/>
         <CasualButton v-if="product.availible === false && windowWidth > 1200" 
                                                         :title="'сообщить о поступлении'"
                                                         :theme="'clearWhite'"
@@ -55,7 +55,7 @@
 import { defineProps, ref, onMounted, onUnmounted } from 'vue';
 import StarsComponent from '@/UI/StarsComponent.vue';
 import IconButton from '@/UI/IconButton.vue';
-import CartButton from '@/UI/CartButton.vue';
+import AddToCartButton from '@/UI/AddToCartButton.vue';
 import CasualButton from '@/UI/CasualButton.vue';
 
 const props = defineProps({

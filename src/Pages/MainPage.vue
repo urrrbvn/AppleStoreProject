@@ -49,6 +49,6 @@ onMounted(()=>{
 
 </script>
 
-<style lang="scss" scoped>
-@import '../styles/mainPage.scss';
+<style lang="scss">
+
 </style>
