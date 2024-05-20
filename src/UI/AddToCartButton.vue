@@ -1,39 +1,98 @@
 <template>
-  	<button class="button">
-    	<img class="button__icon" :src="`/src/assets/images/cartIcon.svg`">
-    	<span class="button__title">в корзине</span>
-    	<p class="button__counter">{{ counter }}</p>
-  	</button>
+    <button class="AddToCart-button" @click="btnHandler()" :style="backgroundStyles">
+        <div class="AddToCart-button__info">
+            <article class="AddToCart-button__price">
+                <p>137 900 ₽</p>
+            </article>
+            <figure class="AddToCart-button__icon">
+                <component :is="cartIcon"></component>
+            </figure>
+            <article class="AddToCart-button__title">  
+                <p v-if="!cartBtnClicked">в корзину</p>
+                <p v-else>в корзине</p>
+            </article>
+        </div>
+    </button>
 </template>
 
 <script setup>
+import { computed, ref, shallowRef } from 'vue';
+import cartAddIcon from '../Icons/cart-add-Icon.vue';
+import cartCheckedIcon from '../Icons/cart-checked-Icon.vue';
 
-let counter = 1
 
+
+const cartBtnClicked = ref(false)
+
+const cartIcon = shallowRef(cartAddIcon)
+
+function switchIcon(){
+    cartIcon.value === cartAddIcon ? (cartIcon.value = cartCheckedIcon) : (cartIcon.value = cartAddIcon)
+    cartBtnClicked.value = !cartBtnClicked.value
+    console.log(cartBtnClicked.value);
+}
+
+const backgroundStyles = computed(()=>{
+    if(cartBtnClicked.value === true){
+        const backgroundColor = '#6FD91C'
+        return {backgroundColor}
+    }
+    
+})
+
+function btnHandler(){
+    switchIcon()
+    // далее будут добавлены функции связанные с логикой бэкэнда
+}
 </script>
 
-<!-- <style scoped lang="scss">
-@import '../styles/variables.scss';
+<!-- <style lang="scss">
 @import '../styles/mixins.scss';
+@import '../styles/variables.scss';
+    .AddToC
 
-.button{
-	@include flexRow();
-  	padding: 12px 16px;
-  	border-radius: 16px;
-  	align-items: center;
-  	justify-content: center;
-  	gap: 4px;
-  	color: white;
-  	border: none;  
-  	font-size: 20px;
-  	line-height: 23.87px;
-	background-color: #52D116;
+        padding: 16px 76.5px;
+        
+        background-color: $prime;
+        border-radius: 8px;
+        color: white;
+
+        .cart-button__price{
+            display: none;
+            font-size: 20px;
+        }
+
+        .cart-button__info{
+            @include flexRow();
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            .cart-button__title{
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+    }
+
+@media (max-width: 1200px) {
+    .AddToC
+        height: 40px;
+        padding: 9px 9px;
+        display: flex;;
+        gap: 8px;
+
+        .cart-button__price{
+            display: block;
+            text-wrap: nowrap;
+        }
+        
+        .cart-button__info{
+
+            .cart-button__title{
+                display: none;
+            }
+        }
+    }
 }
-.button__counter{
-  	padding: 4px 12px 4px 12px;
-  	border-radius: 32px;
-  	box-shadow: 0px 4px 4px 0px #00000040 inset;
-
-}
-
 </style> -->

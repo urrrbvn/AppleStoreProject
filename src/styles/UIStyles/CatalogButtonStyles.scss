@@ -15,3 +15,22 @@
     font-size: 20px;
     line-height: 23.87px;
 }
+@media (max-width: 1200px){
+    .catalog-button{
+        background-color: transparent;
+        gap: 8px;
+        padding: 8px;
+        color: $smallText_6;
+        width: 168px;
+        justify-content: start;
+    }
+}
+@media (max-width: 768px){
+    .catalog-button{
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        height: 100%;
+        color: black;
+    }
+}

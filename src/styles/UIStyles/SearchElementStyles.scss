@@ -2,6 +2,7 @@
 @import '@/styles/variables.scss';
 
 .input-block{
+    position: relative;
     @include flexRow();
     @include dynamic-calc-local(width, 1200 ,594);
     padding: 16px 24px;
@@ -20,9 +21,9 @@
 .toggled-block{
     position: absolute;
     z-index: 2;
-    max-width: 594px;
-    top: 180px;
-    right: 720px;
+    max-width: 100%;
+    top: 67px;
+    // right: 720px;
     height: 480px;
     background-color: white;
     border-radius: 10px;
