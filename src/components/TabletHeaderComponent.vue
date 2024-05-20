@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 <template>
-=======
-git <template>
->>>>>>> Stashed changes
     <header class="tablet-header">
         <div class="tablet-header__control">
             <figure class="tablet-header__logo">
