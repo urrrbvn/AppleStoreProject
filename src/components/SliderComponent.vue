@@ -1,28 +1,34 @@
 <template>
   <div class="slider">
-    <div class="single-item">
+    <div class="slider__single-item">
       <div
         v-for="(slide, index) in slides"
         :key="index"
-        class="slide"
+        class="slider__nav"
         :style="{ backgroundColor: slide.color }"
-      >
-        <div class="content">
-          <div class="images-container">
-            <div class="image-container">
-              <img :src="slide.image" :alt="'Slide ' + (index + 1) + ' image'">
-              <div class="image-container-second">
+      > 
+          <div class="slider__images-container">
+            <div class="slider__images-first">
+              <div>
+                <img :src="slide.image" :alt="'Slide ' + (index + 1) + ' image'">
+              </div>
+              <div class="slider__image-second">
                 <img :src="slide.secondaryImage" :alt="'Slide ' + (index + 1) + ' secondary image'">
                 <p>{{ slide.content }}</p>
                 <CasualButton :title="'подробнее'" :width="160"/>
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
-    <button class="prev-btn" @click="prevSlide"><img src="@/assets/images/sliderVectorLeft.png" alt="Previous"></button>
-    <button class="next-btn" @click="nextSlide"><img src="@/assets/images/sliderVector.png" alt="Next"></button>
+    <button class="prev-btn" @click="prevSlide">
+      <svg width="16" height="28" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 4L6 14L16 24L14 28L0 14L14 0L16 4Z" fill="#100E0E"/></svg>
+    </button>
+    <button class="next-btn" @click="nextSlide">
+      <svg width="16" height="28" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 24L10 14L0 4L2 0L16 14L2 28L0 24Z" fill="#100E0E"/></svg>
+    </button>
   </div>
 </template>
 
@@ -41,19 +47,19 @@ import bannerSlide from '@/assets/images/bannerSlide.png';
 
 const slides = ref([
   { 
-    color: 'lightblue', 
+    color: '#D0EAFC', 
     content: 'от 137 900₽', 
     image: iphoneSlider, 
     secondaryImage: bannerSlide
   },
   { 
-    color: 'lightblue', 
+    color: '#D0EAFC', 
     content: 'от 100 900₽', 
     image: iphoneSlider, 
     secondaryImage: bannerSlide
   },
   { 
-    color: 'lightblue', 
+    color: '#D0EAFC', 
     content: 'от 237 900₽', 
     image: iphoneSlider, 
     secondaryImage: bannerSlide
@@ -63,16 +69,16 @@ const slides = ref([
 const currentSlide = ref(0);
 
 const nextSlide = () => {
-  $('.single-item').slick('slickNext');
+  $('.slider__single-item').slick('slickNext');
 };
 
 const prevSlide = () => {
-  $('.single-item').slick('slickPrev');
+  $('.slider__single-item').slick('slickPrev');
 };
 
 onMounted(() => {
-  if ($('.single-item').length) {
-    $('.single-item').slick({
+  if ($('.slider__single-item').length) {
+    $('.slider__single-item').slick({
       dots: false, 
       arrows: false,
       infinite: true,
@@ -85,6 +91,12 @@ onMounted(() => {
   }
 });
 </script>
+
+
+
+
+
+
 
 
 
