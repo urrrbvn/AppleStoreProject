@@ -2,7 +2,7 @@
 @import '../variables.scss';
 
 .catalog{
-    @include dynamic-calc(margin-inline, 120);
+    margin-inline: auto;
     padding-top: 32px;
     padding-bottom: 32px;
     display: flex;
