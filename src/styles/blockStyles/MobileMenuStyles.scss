@@ -1,0 +1,38 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.mobile-menu{
+    @include flexRow();
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    z-index: 3;
+    background-color: white
+}
+.mobile-menu__items{
+    @include flexRow();
+    max-width: 768px;
+    padding-inline: 23px;
+    // justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+.icon-button-wrapper{
+    @include flexRow();
+    gap: 8px;
+    align-items: center;
+    font-size: 20px;
+    padding: 8px;
+    width: 168px;
+    justify-content: start;
+}
+@media (max-width: 768px){
+    .icon-button-wrapper{
+        flex-direction: column;
+        width: auto;
+        gap: 0;
+
+    }
+}

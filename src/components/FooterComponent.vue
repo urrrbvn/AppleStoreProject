@@ -1,14 +1,16 @@
 <template>
     <div class="footer">
         <div class="footer__branding">
-            <figure class="footer__branding-logo">
-                <img src="../assets/images/AppleLogo.svg" width="40px" height="40px">        
-            </figure>
-            <article class="footer__branding-text">
-                <p>© 2013-2022</p>
-                <p>Продажа iPhone в МСК</p>
-                <span class="footer__span">*Сайт не является публичной оффертой. Вся информация, указанная на сайте носит информационный характер.</span>
-            </article>
+            <div class="footer__branding-container">
+                <figure class="footer__branding-logo">
+                    <img src="../assets/images/AppleLogo.svg" width="40px" height="40px">        
+                </figure>
+                <article class="footer__branding-text">
+                    <p>© 2013-2022</p>
+                    <p>Продажа iPhone в МСК</p>
+                </article>
+            </div>
+            <span class="footer__branding-span">*Сайт не является публичной оффертой. Вся информация, указанная на сайте носит информационный характер.</span>
         </div>
         <div class="footer__services">
             <ul class="footer__services-list">
@@ -35,29 +37,26 @@
             <div class="footer__contact-info">
                 <div class="footer__phone-container">
                     <a href="tel:+78127048697" class="footer__phone-number">+7 812 704 86 97</a>
-                    <p class="footer__phone-description">Бесплатная консультация</p>
-                    <p class="footer__phone-description">С 10:00 до 21:00, без выходных</p>
+                    <article class="footer__phone-text">
+                        <p class="footer__phone-description">Бесплатная консультация</p>
+                        <p class="footer__phone-description">С 10:00 до 21:00, без выходных</p>
+                    </article>
                 </div>
                 <a class="footer__callback" href="">Заказать звонок</a>
             </div>
-
             <div class="footer__adress">
                 <p class="footer__adress-text">Москва, ул Барклая 8</p>
                 <p class="footer__adress-text">Москва, ул Барклая 8</p>
             </div>
-            <figure class="footer__icons">
-                <IconButton :icon="'whatsappIcon'" :size="32"></IconButton>
-                <IconButton :icon="'telegramIcon'" :size="32"></IconButton>
-                <IconButton :icon="'vkontakteIcon'" :size="32"></IconButton>
-            </figure>
+            <SocialMediaLinks/>
         </div>
     </div>
 </template>
 
 <script setup>
-import IconButton from '@/UI/IconButton.vue';
+import SocialMediaLinks from '@/UI/SocialMediaLinks.vue';
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/FooterStyle.scss';
+
 </style>

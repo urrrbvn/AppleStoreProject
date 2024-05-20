@@ -1,0 +1,55 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.product-features{
+    margin: 32px 120px 32px 120px;
+
+    .product-features__list{
+        list-style-type: none;
+
+        .product-features__item{
+            color: $smallText_7;
+        }
+    }
+
+    .item-extra-info{
+        margin: 20px 0 20px 0;
+        color: $smallText_7;
+    }
+}
+
+.titleBlock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0 34px 0;
+    h1{
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 57.28px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .product-features{
+        margin: 32px 24px 32px 24px;
+
+        .item-extra-info{
+            margin: 16px 0 16px 0;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .product-features{
+        margin: 16px;
+
+        .product-features__title{
+            font-size: 24px;
+        }
+
+        .item-extra-info{
+            margin: 8px 0 8px 0;
+        }
+    }
+}

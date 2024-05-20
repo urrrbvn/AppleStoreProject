@@ -1,0 +1,49 @@
+@import '@/styles/mixins.scss';
+@import '@/styles/variables.scss';
+    .AddToCart-button{
+
+        padding: 16px 76.5px;
+        
+        background-color: $prime;
+        border-radius: 8px;
+        color: white;
+        border: none;
+
+        .AddToCart-button__price{
+            display: none;
+            font-size: 20px;
+        }
+
+        .AddToCart-button__info{
+            @include flexRow();
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            .AddToCart-button__title{
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+    }
+
+@media (max-width: 1200px) {
+    .AddToCart-button{
+        height: 40px;
+        padding: 9px 9px;
+        display: flex;;
+        gap: 8px;
+
+        .AddToCart-button__price{
+            display: block;
+            text-wrap: nowrap;
+        }
+        
+        .AddToCart-button__info{
+
+            .AddToCart-button__title{
+                display: none;
+            }
+        }
+    }
+}

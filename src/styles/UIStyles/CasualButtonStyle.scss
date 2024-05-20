@@ -1,0 +1,14 @@
+@import '@/styles/mixins.scss';
+@import '@/styles/variables.scss';
+.casualBtn{
+    @include flexRow();
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    border-radius: 8px;
+
+    color: white;
+    background-color: $prime;
+    font-size: 16px;
+    
+}

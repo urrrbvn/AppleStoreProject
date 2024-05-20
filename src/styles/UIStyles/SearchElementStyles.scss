@@ -1,0 +1,28 @@
+@import '@/styles/mixins.scss';
+
+.input-block{
+    @include flexRow();
+    @include dynamic-calc-local(width, 1200 ,594);
+    padding: 16px 24px;
+    border: 1px solid #B7B7B7;
+    border-radius: 8px;
+    gap: 8px;
+    .input-block__item{
+        width: 100%;
+        border: none;
+        font-size: 20px;
+        font-weight: 400;
+        outline: none;
+    }
+}
+@media (max-width: 1200px){
+    .searchIcon{
+        path{
+            stroke: black;
+        }
+    }
+    .input-block{
+        width: 100%;
+        border: none;
+    }
+}
