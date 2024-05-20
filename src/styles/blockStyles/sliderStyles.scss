@@ -1,0 +1,65 @@
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+.slider {
+  position: relative;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider__container {
+  width: 100%;
+}
+
+.slider__prev-btn,
+.slider__next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.slider__next-btn > svg > path {
+  fill: grey;
+}
+
+.slider__next-btn:hover > svg > path {
+  fill: black;
+}
+
+.slider__prev-btn > svg > path {
+  fill: grey;
+}
+
+.slider__prev-btn:hover > svg > path {
+  fill: black;
+}
+
+.slider__prev-btn {
+  left: 120px;
+}
+
+.slider__next-btn {
+  right: 120px;
+}
+
+.slider__info-container {
+  display: flex;
+  gap: 70px;
+  margin-top: 99px;
+  margin-left: 390px;
+}
+
+.slider__image-second {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+} 
+
+.slider__image-second > p {
+  color: #1E3240;
+  font-size: 60px;
+}
