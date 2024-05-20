@@ -1,31 +1,29 @@
 <template>
   <div class="slider">
-    <div class="slider__single-item">
+    <div class="slider__container">
       <div
         v-for="(slide, index) in slides"
         :key="index"
-        class="slider__nav"
+        class="slider__item"
         :style="{ backgroundColor: slide.color }"
-      > 
-          <div class="slider__images-container">
-            <div class="slider__images-first">
-              <div>
-                <img :src="slide.image" :alt="'Slide ' + (index + 1) + ' image'">
-              </div>
-              <div class="slider__image-second">
-                <img :src="slide.secondaryImage" :alt="'Slide ' + (index + 1) + ' secondary image'">
-                <p>{{ slide.content }}</p>
-                <CasualButton :title="'подробнее'" :width="160"/>
-              </div>
-            </div>
-          </div>
-      </div>
+      >
+      <div class="slider__info-container">
+        <div class="slider__info-main">
+          <img :src="slide.image" :alt="'Slide ' + (index + 1) + ' image'">
+        </div>
+        <div class="slider__image-second">
+          <img :src="slide.secondaryImage" :alt="'Slide ' + (index + 1) + ' secondary image'">
+          <p>{{ slide.content }}</p>
+          <CasualButton :title="'подробнее'" :width="160"/>
+        </div>
+      </div> 
     </div>
-    <button class="prev-btn" @click="prevSlide">
+    </div>
+    <button class="slider__prev-btn" @click="prevSlide">
       <svg width="16" height="28" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M16 4L6 14L16 24L14 28L0 14L14 0L16 4Z" fill="#100E0E"/></svg>
     </button>
-    <button class="next-btn" @click="nextSlide">
+    <button class="slider__next-btn" @click="nextSlide">
       <svg width="16" height="28" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 24L10 14L0 4L2 0L16 14L2 28L0 24Z" fill="#100E0E"/></svg>
     </button>
@@ -69,20 +67,20 @@ const slides = ref([
 const currentSlide = ref(0);
 
 const nextSlide = () => {
-  $('.slider__single-item').slick('slickNext');
+  $('.slider__container').slick('slickNext');
 };
 
 const prevSlide = () => {
-  $('.slider__single-item').slick('slickPrev');
+  $('.slider__container').slick('slickPrev');
 };
 
 onMounted(() => {
-  if ($('.slider__single-item').length) {
-    $('.slider__single-item').slick({
+  if ($('.slider__container').length) {
+    $('.slider__container').slick({
       dots: false, 
       arrows: false,
       infinite: true,
-      speed: 500,
+      speed: 800,
       slidesToShow: 1,
       slidesToScroll: 1
     });
