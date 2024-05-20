@@ -2,7 +2,7 @@
 @import '../mixins.scss';
 
 .product-features{
-    margin: 72px 120px 32px 120px;
+    margin: 32px 120px 32px 120px;
 
     .product-features__list{
         list-style-type: none;
@@ -27,5 +27,29 @@
         font-size: 48px;
         font-weight: 500;
         line-height: 57.28px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .product-features{
+        margin: 32px 24px 32px 24px;
+
+        .item-extra-info{
+            margin: 16px 0 16px 0;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .product-features{
+        margin: 16px;
+
+        .product-features__title{
+            font-size: 24px;
+        }
+
+        .item-extra-info{
+            margin: 8px 0 8px 0;
+        }
     }
 }
