@@ -56,7 +56,3 @@
 <script setup>
 import SocialMediaLinks from '@/UI/SocialMediaLinks.vue';
 </script>
-
-<style lang="scss" scoped>
-
-</style>
