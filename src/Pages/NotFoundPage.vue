@@ -28,6 +28,7 @@ import { RouterLink } from 'vue-router';
         background-color: white;
         position: absolute;
         top: 208px;
+        z-index: 1;
     }
     article{
         text-align: center;
