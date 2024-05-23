@@ -7,16 +7,17 @@
                 <input class="input-block__item" type="text" placeholder="Поиск по каталогу товаров" v-model="searchInput">
             </div>
                 <div class="toggled-block" v-if="result.length > 0">
-                    <div class="search-result" v-for="product in result" :key="product.id" @click="'/'">
-                        <img :src="`src/assets/images/${product.image}.png`" width="64px" height="64px">
-                        <div class="search-result__text">
-                            <h2>{{ product.title }}</h2>
-                            <p>{{ product.discountPrice }} ₽</p>
+                    <div class="search-result">
+                        <div class="search-result__item" v-for="product in result" :key="product.id" @click="'/'">
+                            <img :src="`src/assets/images/${product.image}.png`" width="64px" height="64px">
+                            <div class="search-result__text">
+                                <h2>{{ product.title }}</h2>
+                                <p>{{ product.discountPrice }} ₽</p>
+                            </div>
+                            <a href="/">Подробнее</a>
                         </div>
-                        <a href="/">Подробнее</a>
                     </div>
                 </div>
-            
         </div>
 </template>
 
