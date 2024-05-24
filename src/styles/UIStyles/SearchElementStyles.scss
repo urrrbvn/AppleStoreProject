@@ -7,13 +7,19 @@
     border: 1px solid #B7B7B7;
     border-radius: 8px;
     gap: 8px;
-    .input-block__item{
-        width: 100%;
-        border: none;
-        font-size: 20px;
-        font-weight: 400;
-        outline: none;
-    }
+}
+.input-block__item{
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    font-weight: 400;
+    outline: none;
+}
+.search-button{
+    background-color: transparent;
+    border: none;
+    width: fit-content;
+    height: fit-content;
 }
 @media (max-width: 1200px){
     .searchIcon{
@@ -23,6 +29,32 @@
     }
     .input-block{
         width: 100%;
+        border: none;
+        padding-inline: 0;
+        transition: width 1s ease;
+    }
+}
+@media (max-width: 768px){
+    .input-block__item{
+        width: 0;
+        transition: width 1s ease-in-out;
+    }
+    .unToggled{
+        width: 24px;
+        padding-inline: 0;
+        input{
+            width: 0;
+        };
+    }
+    .toggled{
+        width: 100%;
+        input{
+            width: 100%;
+            transition: width 0.2s ease;
+        }
+    }
+    .close-button{
+        background-color: transparent;
         border: none;
     }
 }
