@@ -7,10 +7,6 @@
                 <IconButton :icon="'likeIcon'" :size="32"/>
                 <span>избранное</span>        
             </div>
-            <div class="icon-button-wrapper">
-                <IconButton :icon="'compareIcon'" :size="32"/>
-                <span>сравнение</span>        
-            </div>
         </div>
     </div>
 </template>

@@ -4,7 +4,7 @@
             <StarsComponent :rating="product.rating"/>
             <span>({{ product.reviews }})</span>
             <IconButton :icon="'likeIcon'" :size="24"/>
-            <IconButton :icon="'compareIcon'" :size="24"/>
+            <!-- <IconButton :icon="'compareIcon'" :size="24"/> -->
         </div>
         <div class="card__main">
             <article class="card__main-title">
