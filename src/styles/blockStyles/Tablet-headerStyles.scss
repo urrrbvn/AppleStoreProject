@@ -6,18 +6,11 @@
     .tablet-header__menu{
         background-color: white;
         position: absolute;
-        top: 63px;
+        z-index: 1;
+        top: 48px;
         width: 100%;
         border-radius: 0 0 24px 24px;
         padding: 16px 173px 24px 24px;
-        .tablet-header__nav-list{
-            flex-wrap:wrap;
-            align-items: center;
-            gap: 24px;
-            @include flexRow();
-            width: 100%;
-            list-style-type: none;
-        }
     }
     .tablet-header__control{
         @include flexRow();
@@ -25,6 +18,7 @@
         align-items: center;
         max-width: 1200px;
         margin: 4px 24px;
+        gap: 24px;
         .tablet-header__phone{
             @include flexCol();
             .tablet-header__phone-content{
@@ -44,13 +38,52 @@
                 text-align: center;
                 font-size: 16px;
                 color: $prime;
+                z-index: 2;
             }
         }
         .tablet-header__burger{
-            margin-left: 40px;
             background-color: transparent;
             border: none;
 
         }  
     } 
+}
+.tablet-header__nav-list{
+    flex-wrap:wrap;
+    align-items: center;
+    gap: 24px;
+    @include flexRow();
+    width: 100%;
+    list-style-type: none;
+}
+.tablet-header__wrapper{
+    @include flexRow();
+    gap: 40px;
+    align-items: center;
+    justify-content:flex-end;
+    width: 100%;
+    .fill{
+        path{
+            fill: black;
+        }
+    }
+    .stroke{
+        path{
+            stroke: black
+        }
+    }
+    .toggled{
+        .stroke{
+            path{
+                stroke: $prime
+            }
+        }
+    }
+}
+@media (max-width: 768px){
+    .tablet-header__nav-list{
+        flex-direction: column;
+        gap: 8px;
+        align-items: start;
+    }
 }
