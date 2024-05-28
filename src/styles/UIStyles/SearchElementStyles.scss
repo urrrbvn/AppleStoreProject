@@ -70,6 +70,9 @@
         border-bottom: 1px solid #E7E7E7
     }
     .search-result__text{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
         flex-grow: 1;
     
         h2{
@@ -164,5 +167,35 @@
     }
 
 }
-    
+    .toggled-block{
+        // min-width: 320px;
+        // max-width: 768px;
+    }
+
+    .search-result{
+        height: 294px;
+
+        &::-webkit-scrollbar{
+            width: 4px;
+        }
+
+        .search-result__item{
+            height: 74px;
+            img{
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        .search-result__text{
+            gap: 6px;
+            h2{
+                font-size: 14px;
+            }
+
+            p{
+                font-size: 16px;
+            }
+        }
+    }
 
