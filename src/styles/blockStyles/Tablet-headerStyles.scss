@@ -2,51 +2,51 @@
 @import '../variables.scss';
 
 .tablet-header{
+    @include flexCol(); 
+} 
+.tablet-header__phone{
     @include flexCol();
-    .tablet-header__menu{
-        background-color: white;
-        position: absolute;
-        z-index: 1;
-        top: 48px;
-        width: 100%;
-        border-radius: 0 0 24px 24px;
-        padding: 16px 173px 24px 24px;
-    }
-    .tablet-header__control{
-        @include flexRow();
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 4px 24px;
-        gap: 24px;
-        .tablet-header__phone{
-            @include flexCol();
-            .tablet-header__phone-content{
-                @include flexRow();
-                @include linkView();
-                gap: 4px;
-                font-size: 20px;
-                line-height: 24px;
-                align-items: center;
-                justify-content: center;
-            }
-            .tablet-header__phone-link{
-                
-                position: absolute;
-                top: 47px;
-                text-decoration: none;
-                text-align: center;
-                font-size: 16px;
-                color: $prime;
-                z-index: 2;
-            }
-        }
-        .tablet-header__burger{
-            background-color: transparent;
-            border: none;
+}
+.tablet-header__burger{
+    background-color: transparent;
+    border: none;
 
-        }  
-    } 
+} 
+.tablet-header__phone-link{
+                
+    position: absolute;
+    top: 47px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    color: $prime;
+    z-index: 2;
+}
+.tablet-header__phone-content{
+    @include flexRow();
+    @include linkView();
+    gap: 4px;
+    font-size: 20px;
+    line-height: 24px;
+    align-items: center;
+    justify-content: center;
+}
+.tablet-header__menu{
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+    top: 48px;
+    width: 100%;
+    border-radius: 0 0 24px 24px;
+    padding: 16px 173px 24px 24px;
+}
+.tablet-header__control{
+    @include flexRow();
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 4px 24px;
+    gap: 24px;
 }
 .tablet-header__nav-list{
     flex-wrap:wrap;
@@ -85,5 +85,8 @@
         flex-direction: column;
         gap: 8px;
         align-items: start;
+    }
+    .tablet-header__control{
+        margin-inline: 8px;
     }
 }
