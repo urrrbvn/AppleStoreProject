@@ -21,7 +21,7 @@
                 </button>
             </div>
         </div>
-        <div class="tablet-header__menu" v-if="BurgerActive === true">
+        <div class="tablet-header__menu" v-if="BurgerActive === true && searchToggled === false">
             <nav class="tablet-header__nav">
                 <ul class="tablet-header__nav-list">
                     <li class="header__nav-item"><a class="header__nav-link" href="">Весь каталог</a></li>
