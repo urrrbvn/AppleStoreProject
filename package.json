@@ -9,9 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vee-validate/yup": "^4.12.8",
     "jquery": "^3.7.1",
     "pinia": "^2.1.7",
     "slick-carousel": "^1.8.1",
+    "vee-validate": "^4.12.8",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },

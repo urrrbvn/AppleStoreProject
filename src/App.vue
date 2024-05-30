@@ -16,6 +16,7 @@ import MobileMenuComponent from './components/MobileMenuComponent.vue';
 
 
 
+
 const windowWidth = ref(window.innerWidth);
 
 const updateWidth = () => {
@@ -43,5 +44,8 @@ body{
 }
 button{
   font-family: 'SF-Pro';
+}
+.test_cont{
+  width: 256px;
 }
 </style>
