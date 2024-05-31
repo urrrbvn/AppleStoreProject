@@ -70,7 +70,6 @@
         @include flexRow();
         width: 100%;
         padding: 0;
-        background: #F9F9F9;
         .advantagesCard__main{
             @include flexRow();
         }
