@@ -20,4 +20,13 @@
     padding-top: 24px;
 }
 
+@media (max-width:1200px) {
+    .advantages{
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
 
+    .advantages__cards{
+        flex-direction: column;
+    }
+}

@@ -11,13 +11,9 @@
                 <h4>{{ content }}</h4>
             </div>
         </div>
-        <CasualButton :theme="'clearWhite'" title="подробнее" style="width: 212px"/>
+        <CasualButton :theme="'clearWhite'" title="подробнее" width="212"/>
     </div>
 </template>
-
-
-// Изменить цвет кнопки
-// Адаптив
 
 <script setup>
     import { defineProps } from 'vue';
@@ -29,8 +25,6 @@
         content: String
     })
 </script>
-
-
 
 <style lang="scss">
 @import '../styles/mixins.scss';
@@ -70,6 +64,19 @@
         }
     }
 } 
+
+@media (max-width:1200px) {
+    .advantagesCard{
+        @include flexRow();
+        width: 100%;
+        padding: 0;
+        background: #F9F9F9;
+        .advantagesCard__main{
+            @include flexRow();
+        }
+    }
+    
+}
 </style>
 
 
