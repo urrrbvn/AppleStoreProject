@@ -13,7 +13,7 @@
                 </article>
                 <div class="form-input">
                     <input type="tel" value="+7">
-                    <CasualButton theme="grey" width="160" title="подписаться"/>
+                    <CasualButton theme="grey" title="подписаться"/>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@ import CasualButton from '@/UI/CasualButton.vue';
     justify-content: center;
     
     gap: 16px;
-    width: 486px;
+    // width: 486px;
     background: linear-gradient(90.34deg, #F7355D 0.3%, #9747FF 101.33%);
     border-radius: 16px;
     height: 196px;
@@ -87,7 +87,8 @@ import CasualButton from '@/UI/CasualButton.vue';
         display: flex;
         gap: 16px;
         justify-content: center;
-
+        padding-left: 32px;
+        padding-right: 32px;
         input{
             width: 246px;
             border-radius: 8px;
@@ -96,6 +97,10 @@ import CasualButton from '@/UI/CasualButton.vue';
             font-size: 24px;
             color: $smallText_5;
             outline: 0;
+        }
+
+        .casualBtn{
+            width: 160px;
         }
     }
 }
@@ -154,13 +159,16 @@ import CasualButton from '@/UI/CasualButton.vue';
         .form-input{
             justify-content: normal;
             gap: 8px;
+            padding: 0;
+
+
         }
     }
 }
 
 @media (max-width: 768px) {
     .subscription-offer{
-
+        
         img{
             display: none;
         }
@@ -180,15 +188,22 @@ import CasualButton from '@/UI/CasualButton.vue';
     .subscription-offer__form{
         gap: 8px;
 
+        .form-text{
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
         .form-input{
             flex-direction: column;
+            width: 100%;
 
             input{
                 height: 56px;
+                width: 100%;
             }
 
             .casualBtn{
-                width: 200px;
+                width: auto;
             }
         }
     }
