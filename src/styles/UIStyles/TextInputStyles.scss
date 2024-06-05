@@ -1,0 +1,17 @@
+@import '../mixins.scss';
+@import '../variables.scss';
+
+.custom-input{
+    @include flexRow();
+    background-color: white;
+    padding: 16px 16px 14px 16px;
+    font-weight: 400;
+
+    border: 1px solid #DBDBDB;
+    border-radius: 8px;
+}
+.custom-input__item{
+    border: none;
+    outline: none;
+    width: 100%;
+}

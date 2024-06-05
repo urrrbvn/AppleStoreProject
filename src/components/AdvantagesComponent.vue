@@ -2,12 +2,12 @@
     <div class="advantages">
         <h1 class="advantages__text">Наши преимущества</h1>
         <div class="advantages__cards">
-            <AdvantagesCardComponent v-for="(advantage, ind) in advantagesList" 
+            <AdvantagesCardComponent v-for="(advantage, ind) in advantagesList"
                 :key="ind"
                 :img="advantage.img"
                 :title="advantage.title"
                 :content="advantage.content"
-                :style="advantage.style"/>
+                :modificator="`advantages-card_${advantage.img}`"/>
         </div>
     </div>
 </template>
@@ -20,38 +20,28 @@ const advantagesList = [
     { 
         img: 'discount',
         title: 'Акции и подарки',
-        content: 'Постоянные акции, бонусы и скидки. Покупайте технику Apple по самым выгодным ценам',
-        style: 'background: linear-gradient(180.04deg, #FE94A6 0.04%, #F2F2F2 65.84%);'
+        content: 'Постоянные акции, бонусы и скидки. Покупайте технику Apple по самым выгодным ценам'
     },
     { 
         img: 'delivery',
         title: 'Доставим за 3 часа',
-        content: 'Быстрая и бесплатная доставка по Москве. Доставим за 3 часа в день заказа. Также доступна быстрая доставка по всей России или самовывоз',
-        style: 'background: linear-gradient(180.04deg, #E685FF 0.04%, #F2F2F2 65.84%);'
+        content: 'Быстрая и бесплатная доставка по Москве. Доставим за 3 часа в день заказа. Также доступна быстрая доставка по всей России или самовывоз'
     },
     { 
-        img: 'card wallet',
+        img: 'cardWallet',
         title: 'Удобные способы оплаты',
-        content: 'Наличными или картой при получении, оплата на сайте или в кредит',
-        style: 'background: linear-gradient(180.04deg, #7DE9FF 0.04%, #F2F2F2 65.84%);'
+        content: 'Наличными или картой при получении, оплата на сайте или в кредит'
     },
     { 
-        img: 'building with columns',
+        img: 'buildingWithColumns',
         title: 'Покупка в кредит',
-        content: 'Получите самое выгодное кредитное предложение от более чем 30 ведущих банков страны',
-        style: 'background: linear-gradient(180.04deg, #FFE685 0.04%, #F7F7F7 65.84%);'
+        content: 'Получите самое выгодное кредитное предложение от более чем 30 ведущих банков страны'
     },
     { 
         img: 'approval',
         title: 'Гарантия',
-        content: 'Все товары, представленные в нашем сайте, имеют гарантию от нашего магазина или компании Apple',
-        style: 'background: linear-gradient(180.04deg, #ADFFC1 0.04%, #F2F2F2 65.84%), #F2F2F2;'
+        content: 'Все товары, представленные в нашем сайте, имеют гарантию от нашего магазина или компании Apple'
     }
 ]
 
 </script>
-
-<style lang="scss" scoped>
-    @import '../styles/mixins.scss';
-    @import '../styles/variables.scss';
-</style>

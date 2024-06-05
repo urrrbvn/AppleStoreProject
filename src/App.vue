@@ -1,6 +1,6 @@
 <template>
   <HeaderComponent v-if="windowWidth > 1200"/>
-  <TabletHeaderComponent v-if="windowWidth < 1200 && windowWidth > 768" />
+  <MobileHeaderComponent v-if="windowWidth < 1200" />
   <RouterView></RouterView>
   <MobileMenuComponent v-if="windowWidth < 1200"/>
   <FooterComponent></FooterComponent>
@@ -11,8 +11,9 @@ import HeaderComponent from './components/HeaderComponent.vue';
 import { RouterView } from 'vue-router';
 import FooterComponent from './components/FooterComponent.vue'
 import { ref, onMounted, onUnmounted } from 'vue';
-import TabletHeaderComponent from './components/TabletHeaderComponent.vue';
+import MobileHeaderComponent from './components/MobileHeaderComponent.vue'
 import MobileMenuComponent from './components/MobileMenuComponent.vue';
+
 
 
 
@@ -43,5 +44,8 @@ body{
 }
 button{
   font-family: 'SF-Pro';
+}
+.test_cont{
+  width: 256px;
 }
 </style>

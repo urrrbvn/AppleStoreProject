@@ -1,20 +1,90 @@
 @import '@/styles/mixins.scss';
+@import '@/styles/variables.scss';
 
 .input-block{
+    position: relative;
     @include flexRow();
     @include dynamic-calc-local(width, 1200 ,594);
-    padding: 16px 24px;
     border: 1px solid #B7B7B7;
     border-radius: 8px;
+    padding: 16px 24px;
     gap: 8px;
-    .input-block__item{
-        width: 100%;
-        border: none;
-        font-size: 20px;
-        font-weight: 400;
-        outline: none;
+}
+.input-block__item{
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    font-weight: 400;
+    outline: none;
+}
+.search-button{
+    background-color: transparent;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    }
+
+
+.toggled-block{
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 60px;
+    margin-inline: auto;
+}
+
+.search-result{
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    width: 593px;   
+    overflow-y: scroll;
+    height: 480px;
+    &::-webkit-scrollbar{
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background-color: #E1E1E1;
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-track{
+        background: #F9F9F9;
+        border-radius: 8px;
+        margin-bottom: 36px;
+        margin-top: 36px;
+    }
+    .search-result__item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        height: 96px;
+        margin-right: 20px;
+        padding-left: 32px;
+        border-bottom: 1px solid #E7E7E7
+    }
+    .search-result__text{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex-grow: 1;
+    
+        h2{
+            font-size: 20px;
+            font-weight: 400;
+        }
+        p{
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+    a{
+        color: $prime;
+        text-decoration: none;
     }
 }
+
 @media (max-width: 1200px){
     .searchIcon{
         path{
@@ -22,7 +92,95 @@
         }
     }
     .input-block{
+        position: static;
         width: 100%;
         border: none;
+        padding-inline: 0;
+        transition: width 1s ease;
+        padding: 8px 16px;
+    }
+    .close-button{
+        background-color: transparent;
+        border: none;
+        position: static;
+        
+    }
+
+
+    .toggled-block{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        top: 45px;
+        left: 0;
+    }
+
+    .search-result{
+        height: 344px;
+        width: 593px;
+        .search-result__item{
+            height: 80px;
+            img{
+                width: 48px;
+                height: 48px;
+            }
+        }
+        .search-result__text{
+            h2{
+                font-size: 16px;
+            }
+            p{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .input-block__item{
+        width: 0;
+        transition: width 1s ease-in-out;
+    }
+    .unToggled{
+        width: 24px;
+        padding-inline: 0;
+        input{
+            width: 0;
+        };
+    }
+    .toggled{
+        width: 100%;
+        input{
+            width: 100%;
+            transition: width 0.2s ease;
+        }
+    }
+
+    .search-result{
+        height: 294px;
+        width: 100%;
+
+        &::-webkit-scrollbar{
+            width: 4px;
+        }
+
+        .search-result__item{
+            height: 74px;
+            img{
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        .search-result__text{
+            gap: 6px;
+            h2{
+                font-size: 14px;
+            }
+
+            p{
+                font-size: 16px;
+            }
+        }
     }
 }
