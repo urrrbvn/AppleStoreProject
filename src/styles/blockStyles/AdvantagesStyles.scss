@@ -5,6 +5,10 @@
 .advantages {
     padding-top: 40px;
     padding-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    
         h1 {
         text-align: center; 
         font-weight: 700;
@@ -13,20 +17,47 @@
 }
 
 .advantages__cards {
-    width: 100%;
+    // width: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 15px;
     padding-top: 24px;
+}
+
+.advantages-card_discount{
+    background: linear-gradient(180.04deg, #FE94A6 0.04%, #F2F2F2 65.84%);
+}
+
+.advantages-card_delivery{
+    background: linear-gradient(180.04deg, #E685FF 0.04%, #F2F2F2 65.84%);
+}
+
+.advantages-card_cardWallet{
+    background: linear-gradient(180.04deg, #7DE9FF 0.04%, #F2F2F2 65.84%);
+}
+
+.advantages-card_buildingWithColumns{
+    background: linear-gradient(180.04deg, #FFE685 0.04%, #F7F7F7 65.84%);
+}
+
+.advantages-card_approval{
+    background: linear-gradient(180.04deg, #ADFFC1 0.04%, #F2F2F2 65.84%);
+
 }
 
 @media (max-width:1200px) {
     .advantages{
-        padding-top: 24px;
-        padding-bottom: 24px;
+        padding: 24px 24px 24px 24px;
     }
 
     .advantages__cards{
         flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width:768px) {
+    .advantages{
+        padding: 24px 16px 24px 16px;
     }
 }
