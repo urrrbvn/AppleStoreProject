@@ -1,0 +1,111 @@
+@import '../mixins';
+@import '../variables';
+
+.advantages-card {
+  @include flexCol();
+  align-items: center;
+  border-radius: 16px;
+  padding: 24px 8px 32px 8px;
+  max-width: 228px;
+  justify-content: space-between;
+  .advantages-card__main {
+    @include flexCol();
+    gap: 8px;
+    margin-bottom: 32px;
+    figure {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      gap: 16px;
+      img{
+        width: 160px;
+        height: 160px;
+      }
+      h2 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+      }
+    }
+    .advantages-card__description {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      h4 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: $smallText_7;
+      }
+    }
+  }
+  .casualBtn{
+    width: 100%;
+  }
+}
+
+@media (max-width:1200px) {
+  .advantages-card{
+    @include flexRow();
+    width: 100%;
+    padding: 24px 71px 32px 24px;
+    background: #F9F9F9;
+    gap: 16px;
+    max-width: 100%;
+    align-items: center;
+    height: 150px;
+    .advantages-card__main{
+      @include flexCol();
+      gap: 0;
+      margin: 0;
+      figure{
+        flex-direction: row;
+        gap: 26px;
+        img{
+          width: 64px;
+          height: 64px;
+          margin-top: 10px;
+        }
+      }
+      .advantages-card__description{
+        position: relative;
+        bottom: 15px;
+        text-align: left;
+        padding-left: 90px;
+      }
+    }
+    .casualBtn{
+      min-width: 212px;
+      width: 212px;
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .advantages-card{
+    padding: 20px 23px 16px 16px;
+    .advantages-card__main{
+      gap: 8px;
+      figure{
+        gap: 8px;
+        img{
+          width: 32px;
+          height: 32px;
+          margin: 0;
+        }
+        h2{
+          font-size: 20px;
+        }
+      }
+      .advantages-card__description{
+        display: block;
+        padding: 0;
+        bottom: 0;
+      }
+    }
+    .casualBtn{
+      display: none;
+    }
+  }
+}
