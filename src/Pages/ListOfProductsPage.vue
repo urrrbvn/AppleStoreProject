@@ -19,5 +19,12 @@
 </template>
 
 <script setup>
+import {onMounted} from "vue";
+import {useCatalogStore} from "@/stores/catalog.js";
 
+const catalog = useCatalogStore()
+
+onMounted(() => {
+    catalog.getProducts()
+})
 </script>

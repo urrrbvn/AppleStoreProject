@@ -29,7 +29,7 @@
 
 <script setup>
 import { useCatalogStore } from '@/stores/catalog';
-import { ref, watch, reactive } from 'vue';
+import { ref, watch, reactive, onMounted } from 'vue';
 
 const catalog = useCatalogStore()
 const searchInput = ref('')
@@ -58,7 +58,7 @@ const SearchHandler = ()=>{
     }
 }
 const openSearch = () =>{
-    if(isActive.value != 'toggled'){
+    if(isActive.value !== 'toggled'){
         emit('toggle')
     }
     isActive.value = 'toggled'
@@ -68,4 +68,8 @@ const closeSearch = () =>{
     searchInput.value = ''
     emit('toggle')
 }
+
+onMounted(() => {
+    console.log(catalog.allProducts)
+})
 </script>
