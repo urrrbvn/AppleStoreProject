@@ -13,6 +13,7 @@
 @import './blockStyles/Tablet-headerStyles.scss';
 @import './blockStyles/sliderStyles.scss';
 @import './blockStyles/BannerStyles.scss';
+@import './blockStyles/ModalWindowStyles.scss';
 
 // импорты стилей для страниц
 @import './pagesStyles/mainPage.scss';
@@ -29,6 +30,9 @@
 @import './UIStyles/SpecialButtonStyles.scss';
 @import './UIStyles/StarsComponentStyles.scss';
 @import './UIStyles/TextInputStyles.scss';
+
+
+@import './modalStyles/GetCallStyles.scss';
 
 
 
