@@ -1,0 +1,31 @@
+@import '../mixins.scss';
+@import '../variables.scss';
+
+.get-call{
+    @include flexCol();
+    align-items: center;   
+    margin-bottom: 34px     
+}
+.get-call__text{
+    @include flexCol();
+    text-align: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    h2{
+        font-size: 32px;
+        font-weight: 700px;
+    }
+    p{
+        color: $smallText_7;
+        font-size: 16px;
+    }
+}
+.get-call__functional{
+    width: 246px;
+    @include flexCol();
+    gap: 16px;
+}
+.get-call__form{
+    @include flexCol();
+    gap: 16px;
+}

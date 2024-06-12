@@ -4,7 +4,7 @@
 .custom-input{
     @include flexRow();
     background-color: white;
-    padding: 16px 16px 14px 16px;
+    padding: 13px 16px 13px 16px;
     font-weight: 400;
 
     border: 1px solid #DBDBDB;
@@ -14,4 +14,8 @@
     border: none;
     outline: none;
     width: 100%;
+}
+.custom-input__error{
+    color: red;
+    position: relative;
 }

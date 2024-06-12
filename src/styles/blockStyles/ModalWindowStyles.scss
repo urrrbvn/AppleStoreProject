@@ -1,0 +1,40 @@
+@import '../mixins.scss';
+.modal{
+    position: fixed;
+    width: 100%;
+    background: #FFFFFF4D;
+    backdrop-filter: blur(5px);
+    top: 0;
+    height: 100%;
+
+    display: flex;
+    align-items: center
+}
+.modal__content{
+    @include flexRow();
+    flex-direction: column;
+    // max-width: 720px;
+    width: 720px;
+    margin-inline: auto ;
+    // height: 250px;
+    border-radius: 16px;
+    background-color: rgb(253, 253, 253);
+
+    padding: 16px
+}
+.modal__close-container{
+    @include flexRow();
+    justify-content: end;
+    width: 100%;
+
+    position: relative;
+
+    justify-self: start;
+}
+.modal__close-button{
+    background: transparent;
+    border: none;
+
+    width: 24px;
+    height: 24px;
+}

@@ -27,6 +27,7 @@
         <BannerComponent/>
         <CatalogComponent :status="'new'"/>
         <AdvantagesComponent/>
+        <SubscriptionOfferComponent/>
     </div>
 </template>
 
@@ -37,6 +38,7 @@ import CatalogComponent from '@/components/CatalogComponent.vue';
 import AdvantagesComponent from '@/components/AdvantagesComponent.vue';
 import { useCatalogStore } from '@/stores/catalog';
 import BannerComponent from '@/components/BannerComponent.vue'
+import SubscriptionOfferComponent from '@/components/SubscriptionOfferComponent.vue'
 
 const catalog = useCatalogStore()
 

@@ -24,9 +24,9 @@
                 <img src="../assets/images/PhoneIcon.svg" width="24px" height="24px">
                 <span>+7 812 561 96 62</span>
             </a>
-            <a class="header__phone-link" href="">
+            <p class="header__phone-link" @click="modalStates.ModalToggle()">
                 Вам перезвонить?
-            </a>
+            </p>
         </div>
     </header>
     <main class="control">
@@ -45,9 +45,15 @@
             <SpecialButton/>
         </div>
     </main>
+    <Teleport to="body">
+        <ModalWindowComponent v-if="modalStates.ModalStatus">
+            <GetCallModal/>
+        </ModalWindowComponent>
+    </Teleport>
 </template>
 
 <script setup>
+
 import CatalogButton from '../UI/CatalogButton.vue'
 import SearchElement from '../UI/SearchElement.vue'
 import IconButton from '../UI/IconButton.vue'
@@ -55,7 +61,12 @@ import CategoryButton from '@/UI/CategoryButton.vue';
 import SpecialButton from '@/UI/SpecialButton.vue';
 import { ref } from 'vue';
 import CartButton from '@/UI/CartButton.vue';
+import ModalWindowComponent from './ModalWindowComponent.vue';
+import GetCallModal from '../modals/GetCallModal.vue'
+import { useModalStatesStore } from '@/stores/modalStates';
 
+
+const modalStates = useModalStatesStore()
 
 const categories = ref([
     {title: 'iPhone', icon:`iPhoneIcon`},

@@ -1,23 +1,40 @@
 <template>
     <div class="custom-input">
-        <input class="custom-input__item" :type="type || 'text'" :style="{fontSize: `${fsize}px`}" :placeholder="props.placeholder" v-model="inputVal">
-        <span>{{ errorMessage }}</span>
+        <input v-if="type === 'tel'" class="custom-input__item" @focus="" 
+        :type="type || 'text'" 
+        :style="{fontSize: `${fsize}px`}" 
+        :placeholder="props.placeholder" 
+        v-model="value" 
+        @input="phoneCorrector($event)"
+        >
+        <input v-else class="custom-input__item" @focus="" 
+        :type="type || 'text'" 
+        :style="{fontSize: `${fsize}px`}" 
+        :placeholder="props.placeholder" 
+        v-model="value" 
+        >
     </div>
+    <span class="custom-input__error">{{ errorMessage }}</span>
 </template>
 
 <script setup>
 import { ref, watch, defineEmits } from 'vue';
 import { useField } from 'vee-validate'
+import { fieldRules } from '@/validationRules';
 
 const props = defineProps({
     type: String,
     name: String,
     placeholder: String,
-    fsize: String
+    fsize: Number,
+    validation: String
 })
 
-const inputVal = ref('')
+const {value , errorMessage } = useField(()=> props.name, fieldRules[props.validation], { validateOnValueUpdate: false, initialValue: (props.type === 'tel')? '+7' : '' })
 
-const {value, errorMessage, meta} = useField(()=> props.name)
-
+function phoneCorrector(e){
+    if(props.type === 'tel'){
+        e.target.value = e.target.value.replace(/[^+\d]/g, '');
+    }
+}
 </script>

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vee-validate/rules": "^4.13.1",
     "@vee-validate/yup": "^4.12.8",
     "jquery": "^3.7.1",
     "pinia": "^2.1.7",
