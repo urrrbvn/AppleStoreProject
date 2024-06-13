@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 
 export const useCatalogStore = defineStore('catalog', () => {
   const allProducts = reactive([])
+  const pickedCategory = ref('')
 
   function getProducts(){
     let products = []
@@ -44,5 +45,9 @@ export const useCatalogStore = defineStore('catalog', () => {
     }
   }
 
-  return { allProducts, getProducts, getMostPopular, getNewest, getSearchProducts}
+  const getByCategory = computed(()=>{
+    return allProducts.filter(product => product.category = pickedCategory.value)
+  })
+
+  return { allProducts, getProducts, getMostPopular, getNewest, getSearchProducts, pickedCategory, getByCategory }
 })

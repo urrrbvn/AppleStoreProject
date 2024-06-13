@@ -2,6 +2,11 @@
 @import '@/styles/mixins.scss';
 
 .catalog-button{
+    position: relative;
+    z-index: 1;
+}
+
+.catalog-button__btn{
     @include flexRow();
     padding: 12px 16px;
     border-radius: 16px;
@@ -12,11 +17,79 @@
     border: none;
     background-color: $prime;
 
+    order: 1;
     font-size: 20px;
     line-height: 23.87px;
 }
+
+.catalog-button__toggled-block{
+    position: absolute;
+    display: flex;
+
+    width: 100%;
+    //max-height: 355px;
+    //min-height: 344px;
+    //min-width: 215px;
+    //max-width: 897px;
+    //z-index: 3;
+
+    background-color: white;
+    border-radius: 0 0 16px 16px;
+}
+
+.toggled-block__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 215px;
+    gap: 8px;
+    padding-bottom: 8px;
+
+    max-height: 355px;
+    min-height: 344px;
+}
+
+.toggled-block__button{
+    height: 40px;
+    width: 183px;
+
+    border-radius: 8px;
+    border: none;
+
+    text-align: left;
+    padding-left: 8px;
+    font-size: 20px;
+}
+
+.toggled-block__button:hover{
+    background-color: #F0E4FF;
+    color: $prime;
+}
+
+.toggled-block__button:active{
+    background-color: #F0E4FF;
+    color: $prime;
+}
+
 @media (max-width: 1200px){
+
     .catalog-button{
+        position: static;
+    }
+
+    .toggled-block__container{
+
+    }
+
+    .catalog-button__toggled-block{
+        width: 100%;
+        bottom: 45px;
+        border-radius: 16px 16px 0 0;
+        left: 0;
+    }
+
+    .catalog-button__btn{
         background-color: transparent;
         gap: 8px;
         padding: 8px;
@@ -26,7 +99,7 @@
     }
 }
 @media (max-width: 768px){
-    .catalog-button{
+    .catalog-button__btn{
         flex-direction: column;
         gap: 0;
         width: 100%;
