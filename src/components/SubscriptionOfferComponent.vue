@@ -11,10 +11,10 @@
                     <h1>Скидка 10%</h1>
                     <p>на первую покупку за подписку</p>
                 </article>
-                <div class="form-input">
-                    <input type="tel" value="+7">
+                <form class="form-input" @submit.prevent="onSubmit">
+                    <TextInputElement :type="'tel'" :name="'phone'" :placeholder="'+7'" :fsize="24" :validation="'phone'"/>
                     <CasualButton theme="grey" title="подписаться"/>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -22,4 +22,17 @@
 
 <script setup>
 import CasualButton from '@/UI/CasualButton.vue';
+import TextInputElement from "@/UI/TextInputElement.vue";
+import {useForm} from "vee-validate";
+
+const {handleSubmit, validate} = useForm()
+
+const onSubmit = handleSubmit(async (values) =>{
+    const isValid = await validate()
+    if(!isValid){
+        return
+    }
+    console.log(values);
+    isNumberReceived.value = !isNumberReceived.value
+})
 </script>
