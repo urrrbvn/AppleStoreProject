@@ -24,6 +24,9 @@
 import CasualButton from '@/UI/CasualButton.vue';
 import TextInputElement from "@/UI/TextInputElement.vue";
 import {useForm} from "vee-validate";
+import {ref} from "vue";
+
+const isNumberReceived = ref(false)
 
 const {handleSubmit, validate} = useForm()
 
