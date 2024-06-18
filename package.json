@@ -11,6 +11,7 @@
   "dependencies": {
     "@vee-validate/rules": "^4.13.1",
     "@vee-validate/yup": "^4.12.8",
+    "axios": "^1.7.2",
     "jquery": "^3.7.1",
     "pinia": "^2.1.7",
     "slick-carousel": "^1.8.1",

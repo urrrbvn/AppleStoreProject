@@ -32,7 +32,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, onBeforeMount } from 'vue';
 import sliderComponent from '../components/SliderComponent.vue';
 import CatalogComponent from '@/components/CatalogComponent.vue';
 import AdvantagesComponent from '@/components/AdvantagesComponent.vue';
@@ -42,10 +42,8 @@ import SubscriptionOfferComponent from '@/components/SubscriptionOfferComponent.
 
 const catalog = useCatalogStore()
 
-onMounted(()=>{
+onBeforeMount(()=>{
     catalog.getProducts()
-    console.log(catalog.allProducts)
-    console.log(catalog.getMostPopular);
 })
 
 

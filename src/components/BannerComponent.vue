@@ -8,7 +8,7 @@
                 <h1 class="banner__content-title">iPhone 14 Pro Max</h1>
                 <div class="banner__description">
                     <p class="banner__description-text">по лучшей цене в Москве</p>
-                    <CasualButton title="подробнее" width="160"/>
+                    <CasualButton :title="'подробнее'" :width="160"/>
                 </div>
             </div>
         </div>
