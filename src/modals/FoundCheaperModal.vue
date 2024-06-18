@@ -6,9 +6,11 @@
         </article>
         <div class="found-cheaper__functional">
             <form class="found-cheaper__form" @submit.prevent="onSubmit">
-                <TextInputElement :fsize="16" :name="'phoneLink'" :type="'text'" :placeholder="'ссылка на этот товар в другом магазине'" :validation="'other'"/>
-                <TextInputElement :fsize="16" :name="'phoneLink2'" :type="'text'" :placeholder="'цена в другом магазине'" :validation="'other'"/>
-                <TextInputElement name="phone" :placeholder="'+7'" :fsize="24" :name="'phone'" :type="'tel'" :validation="'phone'"/>
+                <TextInputElement :fsize="16" :name="'productLink'" :type="'text'" :placeholder="'ссылка на этот товар в другом магазине'" :validation="'other'"/>
+                <div class="found-cheaper__input">
+                    <TextInputElement :fsize="16" :name="'productPrice'" :type="'text'" :placeholder="'цена в другом магазине'" :validation="'other'"/>
+                    <TextInputElement name="phone" :placeholder="'+7'" :fsize="24" :name="'phone'" :type="'tel'" :validation="'phone'"/>
+                </div>
                 <CasualButton :width="'461'" :title="'получить скидку'"/>
             </form>
         </div>
