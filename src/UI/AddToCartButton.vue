@@ -19,17 +19,30 @@
 import { computed, ref, shallowRef } from 'vue';
 import cartAddIcon from '../Icons/cart-add-Icon.vue';
 import cartCheckedIcon from '../Icons/cart-checked-Icon.vue';
+import { useCartStore } from '@/stores/Cart';
 
+const props = defineProps({
+    product: Object
+})
 
-
+const cart = useCartStore()
 const cartBtnClicked = ref(false)
-
 const cartIcon = shallowRef(cartAddIcon)
+
+function btnHandler(){
+    console.log(props.product);
+    if(cartBtnClicked.value === false){
+        cart.addToCart(props.product)
+    }
+    if(cartBtnClicked.value === true){
+        cart.deleteFromCart(props.product.id)
+    }
+    switchIcon()
+    cartBtnClicked.value = !cartBtnClicked.value
+}
 
 function switchIcon(){
     cartIcon.value === cartAddIcon ? (cartIcon.value = cartCheckedIcon) : (cartIcon.value = cartAddIcon)
-    cartBtnClicked.value = !cartBtnClicked.value
-    console.log(cartBtnClicked.value);
 }
 
 const backgroundStyles = computed(()=>{
@@ -40,10 +53,6 @@ const backgroundStyles = computed(()=>{
     
 })
 
-function btnHandler(){
-    switchIcon()
-    // далее будут добавлены функции связанные с логикой бэкэнда
-}
 </script>
 
 <!-- <style lang="scss">

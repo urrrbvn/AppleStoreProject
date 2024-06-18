@@ -6,13 +6,15 @@
 			</svg>
 		</figure>
     	<span class="cart-button__title">корзина</span>
-    	<p class="cart-button__counter">{{ counter }}</p>
+    	<p class="cart-button__counter">{{ cartStore.cart.length }}</p>
   	</button>
 </template>
 
 <script setup>
+import { useCartStore } from '@/stores/Cart';
 
-let counter = 1
+
+const cartStore = useCartStore()
 
 </script>
 
