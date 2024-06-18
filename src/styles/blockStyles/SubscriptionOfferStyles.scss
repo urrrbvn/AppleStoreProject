@@ -46,21 +46,27 @@
   }
   .form-input{
     display: flex;
-    gap: 16px;
-    justify-content: center;
+    gap: 8px;
     padding-left: 32px;
     padding-right: 32px;
-    input{
+    max-width: 486px;
+    flex-wrap: wrap;
+    .custom-input{
       width: 246px;
-      border-radius: 8px;
-      border: 1px solid #DBDBDB;
-      padding-left: 24px;
-      font-size: 24px;
-      color: $smallText_5;
-      outline: 0;
+      order: 0;
+      .custom-input__item{
+        color: $smallText_5;
+      }
+    }
+    .custom-input__error{
+      order: 2;
+      color: #faa300;
+
     }
     .casualBtn{
       width: 160px;
+      order: 1;
+      margin-left: 8px;
     }
   }
 }
@@ -115,6 +121,10 @@
       justify-content: normal;
       gap: 8px;
       padding: 0;
+
+      .custom-input__error{
+        color: red;
+      }
     }
   }
 }
@@ -143,12 +153,17 @@
     .form-input{
       flex-direction: column;
       width: 100%;
-      input{
-        height: 56px;
-        width: 100%;
+      gap: 4px;
+      .custom-input{
+        order: 0;
+      }
+      .custom-input__error{
+        order: 1;
       }
       .casualBtn{
         width: auto;
+        order: 2;
+        margin: 0;
       }
     }
   }

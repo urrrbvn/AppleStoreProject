@@ -1,0 +1,147 @@
+@import '../variables.scss';
+
+
+.info-banner{
+  height: 160px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.info-banner__item{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 588px;
+  border-radius: 16px;
+  padding-left: 24px;
+  height: 112px;
+  background: linear-gradient(91.71deg, #89E5FF 0%, #709FFA 99.62%);
+}
+.info-banner__item_item1{
+  h1{
+    font-size: 22px;
+  }
+}
+.banner-item__text{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  article{
+    display: flex;
+    h1{
+      font-size: 24px;
+    }
+  }
+  p{
+    font-size: 14px;
+    margin-right: 70px;
+  }
+}
+.image-promo_item2-mobile{
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .info-banner{
+    flex-direction: column;
+    padding: 16px 24px 0 24px;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+  .info-banner__item{
+    height: 60px;
+    max-width: 100%;
+
+  }
+  .info-banner__item_item1{
+    background: #EBF8FF;
+    color: $prime;
+    gap: 16px;
+    h1{
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+  .info-banner__item_item2{
+    background: #F8F8F8;
+  }
+  .banner-item__text{
+    flex-direction: row;
+    gap: 24px;
+    article{
+      flex-direction: column;
+      max-width: 100%;
+      text-wrap: nowrap;
+      h1{
+        color: $prime;
+        font-size: 16px;
+      }
+    }
+    p{
+      display: flex;
+      align-items: center;
+      color: $smallText_5;
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+  .image-promo{
+    width: 32px;
+  }
+}
+
+@media (max-width:768px) {
+  .info-banner{
+    padding: 16px 16px 0 16px;
+  }
+  .info-banner__item{
+    padding: 0;
+    gap: 0;
+    h1{
+      font-size: 14px;
+      max-width: 244px;
+    }
+  }
+  .info-banner__item_item1{
+    justify-content: center;
+    gap: 4px;
+  }
+  .info-banner__item_item2{
+    height: 80px;
+    justify-content: center;
+  }
+  .banner-item__text{
+    flex-direction: column;
+    gap: 3px;
+    article{
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      max-width: 261px;
+      h1{
+        font-size: 14px;
+      }
+    }
+    p{
+      font-size: 12px;
+      text-align: center;
+      max-width: 261px;
+    }
+  }
+  .image-promo{
+    width: 20px;
+    height: 20px;
+  }
+  .image-promo_item1{
+    margin-bottom: 24px;
+  }
+  .image-promo_item2{
+    display: none;
+
+  }
+  .image-promo_item2-mobile{
+    display: block;
+  }
+}

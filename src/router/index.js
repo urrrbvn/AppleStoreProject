@@ -1,3 +1,4 @@
+import ListOfProductsPage from '@/Pages/ListOfProductsPage.vue'
 import MainPage from '@/Pages/MainPage.vue'
 import NotFoundPage from '@/Pages/NotFoundPage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
@@ -12,6 +13,10 @@ const router = createRouter({
     {
       path: '/:pathMatch(.*)*',
       component: NotFoundPage
+    },
+    {
+      path: '/ListOfProducts',
+      component: ListOfProductsPage
     }
   ]
 })
