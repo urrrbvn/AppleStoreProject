@@ -1,0 +1,51 @@
+@import '../mixins.scss';
+@import '../variables.scss';
+
+.found-cheaper{
+  @include flexCol();
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+
+}
+
+.found-cheaper__text{
+  @include flexCol();
+  max-width: 357px;
+  text-align: center;
+  gap: 8px;
+}
+.found-cheaper__functional{
+  @include flexCol();
+  gap: 16px;
+  width: 461px;
+}
+.found-cheaper__form{
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 8px;
+
+  .found-cheaper__form_input{
+    border: #DBDBDB 1px solid;
+    border-radius: 8px;
+    padding-left: 16px;
+    font-size: 16px;
+  }
+
+  .found-cheaper__form_input1{
+    grid-column: span 2;
+    width: 100%;
+  }
+
+  .found-cheaper__form_input2{
+
+  }
+  .custom-input__error{
+
+  }
+  .custom-input__item{
+    color: $smallText_5;
+  }
+}

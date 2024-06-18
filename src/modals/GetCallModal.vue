@@ -6,10 +6,10 @@
             <p>Менеджер позвонит вам через 3 минуты</p>
         </article>
         <div class="get-call__functional">
-            <form class="get-call__form"ref="form" @submit.prevent="onSubmit">
+            <form class="get-call__form" ref="form" @submit.prevent="onSubmit">
                 <TextInputElement v-if="isNumberReceived === false" name="phone" :placeholder="'+7'" :fsize="24" :name="'phone'" :type="'tel'" :validation="'phone'"/>
                 <CasualButton v-if="isNumberReceived === false" :title="'заказать зовнок'" :width="246"/>
-                <CasualButton v-if="isNumberReceived === true" :title="'Хорошо'" :width="246" @click="modal.ModalToggle()"/>
+                <CasualButton v-if="isNumberReceived === true" :title="'Хорошо'" :width="246" @click="modal.ModalToggle('')"/>
             </form>
         </div>
     </div>

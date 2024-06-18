@@ -3,11 +3,11 @@ import { ref } from "vue";
 
 export const useModalStatesStore = defineStore('modalStates', ()=>{
 
-    const ModalStatus = ref(false)
+    const ModalStatus = ref('')
 
-    const ModalToggle = () =>{
+    const ModalToggle = (component) =>{
         
-        ModalStatus.value = !ModalStatus.value
+        ModalStatus.value = component
     }
 
     return {ModalStatus, ModalToggle}
