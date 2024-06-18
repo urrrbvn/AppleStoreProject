@@ -13,6 +13,7 @@ import FooterComponent from './components/FooterComponent.vue'
 import { ref, onMounted, onUnmounted } from 'vue';
 import MobileHeaderComponent from './components/MobileHeaderComponent.vue'
 import MobileMenuComponent from './components/MobileMenuComponent.vue';
+import axios from 'axios';
 
 
 
@@ -25,6 +26,7 @@ const updateWidth = () => {
 
 onMounted(() => {
   window.addEventListener('resize', updateWidth);
+
 });
 
 onUnmounted(() => {

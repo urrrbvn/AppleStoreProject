@@ -2,49 +2,48 @@
     <div class="card">
         <div class="card__functional">
             <StarsComponent :rating="product.rating"/>
-            <span>({{ product.reviews }})</span>
+            <span>({{ product.count_review }})</span>
             <IconButton :icon="'likeIcon'" :size="24"/>
-            <!-- <IconButton :icon="'compareIcon'" :size="24"/> -->
         </div>
         <div class="card__main">
             <article class="card__main-title">
-                <h2>{{ product.title }}</h2>
+                <h2>{{ productTitle() }}</h2>
             </article>
             <figure>
-                <img :src="`/src/assets/images/${product.image}.png`" width="266px" height="288px">
+                <img :src="`http://localhost:1452/${product.images[0]}`" width="266px" height="288px">
             </figure>
         </div>
         <div class="card__info">
             <div class="card__info-availible">
-                <svg v-if="product.availible === true" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg v-if="product.is_available === true" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="8" cy="8" r="8" fill="#52D116"/>
                 </svg>
-                <svg v-if="product.availible === false" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg v-if="product.is_available === false" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="8" cy="8" r="8" fill="#0071E4"/>
                 </svg>
-                <p v-if="product.availible === true">Есть в наличии</p>
-                <p v-if="product.availible === false">Ожидается поступление</p>
+                <p v-if="product.is_available === true">Есть в наличии</p>
+                <p v-if="product.is_available === false">Ожидается поступление</p>
             </div>
-            <p class="card__info-varranty" v-if="product.availible === true">Гарантия 1 год</p>
+            <p class="card__info-varranty" v-if="product.is_available === true">{{ `гарантия ${product.guarantee} год` }}</p>
         </div>
-        <div class="card__price" v-if="product.availible === true">
-            <p class="card__price-old" v-if="product.discountPrice">{{ product.price }}₽</p>
-            <p class="card__price-actual" v-if="windowWidth > 1200">{{ product.discountPrice ? product.discountPrice : product.price }}₽</p>
+        <div class="card__price" v-if="product.is_available === true">
+            <p class="card__price-old" v-if="product.discount_price">{{ product.price }}₽</p>
+            <p class="card__price-actual" v-if="windowWidth > 1200">{{ product.discount_price ? product.discount_price : product.price }}₽</p>
             <AddToCartButton v-if="windowWidth < 1200"/>
         </div>
-        <div class="card__not-availible-message" v-if="product.availible === false">
+        <div class="card__not-availible-message" v-if="product.is_available === false">
             <p>
                 Мы можем сообщить вам, когда товар появится в наличии
             </p>
         </div>
-        <AddToCartButton v-if="product.availible === true && windowWidth > 1200"/>
-        <CasualButton v-if="product.availible === false && windowWidth > 1200" 
+        <AddToCartButton v-if="product.is_available === true && windowWidth > 1200"/>
+        <CasualButton v-if="product.is_available === false && windowWidth > 1200"
                                                         :title="'сообщить о поступлении'"
                                                         :theme="'clearWhite'"
                                                         :width="`266`"
         />
-        <a href="#" class="card__notify-recepit" v-if="product.availible === false && windowWidth < 1200">Сообщить о поступлении</a>
-        <div class="card__additional" v-if="product.availible === true">
+        <a href="#" class="card__notify-recepit" v-if="product.is_available === false && windowWidth < 1200">Сообщить о поступлении</a>
+        <div class="card__additional" v-if="product.is_available === true">
             <a @click="modalStates.ModalToggle(`foundCheaper${product.id}`)">Хочу дешевле</a>
             <p>купить в 1 клик</p>
         </div>
@@ -80,11 +79,29 @@ const updateWidth = () => {
 
 onMounted(() => {
   window.addEventListener('resize', updateWidth);
+  productTitle()
 });
 
 onUnmounted(() => {
   window.removeEventListener('resize', updateWidth);
 });
+
+const productTitle = () =>{
+    let product = props.product
+    let titleType = product.category
+
+    if(titleType !== 'Аксессуары' && titleType !== 'Гаджеты'){
+        let special = product.characteristics.find(elem => elem.characteristic === 'Объем встроенной памяти')
+        // let title = ''
+        let title = `${product.brand} ${product.name} ${special.value} ${special.unit_type} ${product.color}`
+        // console.log(е);
+        return title
+    }
+    else{
+        let title = `${product.name} ${product.color}`
+        return title
+    }
+}
 
 </script>
 
@@ -123,8 +140,11 @@ onUnmounted(() => {
 .card__price{
         @include flexRow();
         gap: 16px;
+        padding-left: 8px;
         align-items: center;
         margin-bottom: 16px;
+        justify-content: space-between;
+        width: 100%;
 
         .card__price-actual{
             font-size: 32px;
@@ -134,6 +154,7 @@ onUnmounted(() => {
             font-size: 20px;
             font-weight: 400;
             text-decoration: line-through;
+            color: $smallText_5
         }
     }
 .card__info{
@@ -211,6 +232,12 @@ onUnmounted(() => {
         font-weight: 500;
 
     }
+}
+.card__info-varranty{
+    text-wrap: nowrap;
+}
+.card__info-availible{
+    text-wrap: nowrap;
 }
 
 </style>

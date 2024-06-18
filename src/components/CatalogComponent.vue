@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, onMounted } from 'vue';
 import { useCatalogStore } from '@/stores/catalog';
 import CardComponent from '../components/CardComponent.vue'
 
@@ -26,6 +26,8 @@ const props = defineProps({
 })
 
 const catalog = useCatalogStore()
+
+
 </script>
 
 <style lang="scss" scoped>
