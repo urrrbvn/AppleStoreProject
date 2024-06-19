@@ -11,7 +11,7 @@
                     <TextInputElement :fsize="16" :name="'productPrice'" :type="'text'" :placeholder="'цена в другом магазине'" :validation="'other'"/>
                     <TextInputElement :placeholder="'+7'" :fsize="24" :name="'phone'" :type="'tel'" :validation="'phone'"/>
                 </div>
-                <CasualButton :width="'461'" :title="'получить скидку'"/>
+                <CasualButton :width="461" :title="'получить скидку'"/>
             </form>
         </div>
     </div>

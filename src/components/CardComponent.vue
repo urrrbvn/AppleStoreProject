@@ -37,12 +37,12 @@
             </p>
         </div>
         <AddToCartButton v-if="product.is_available === true && windowWidth > 1200" :product="props.product"/>
-        <CasualButton v-if="product.is_available === false && windowWidth > 1200" 
+        <CasualButton @click="modalStates.ModalToggle(`notifyReceipt${product.id}`)" v-if="product.is_available === false && windowWidth > 1200"
                                                         :title="'сообщить о поступлении'"
                                                         :theme="'clearWhite'"
                                                         :width="`266`"
         />
-        <a href="#" class="card__notify-recepit" v-if="product.is_available === false && windowWidth < 1200">Сообщить о поступлении</a>
+        <a @click="modalStates.ModalToggle(`notifyReceipt${product.id}`)" class="card__notify-recepit" v-if="product.is_available === false && windowWidth < 1200">Сообщить о поступлении</a>
         <div class="card__additional" v-if="product.is_available === true">
             <a @click="modalStates.ModalToggle(`foundCheaper${product.id}`)">Хочу дешевле</a>
             <p>купить в 1 клик</p>
@@ -51,6 +51,11 @@
     <Teleport to="body">
         <ModalWindowComponent v-if="modalStates.ModalStatus === `foundCheaper${product.id}`">
             <FoundCheaperModal/>
+        </ModalWindowComponent>
+    </Teleport>
+    <Teleport to="body">
+        <ModalWindowComponent v-if="modalStates.ModalStatus === `notifyReceipt${product.id}`">
+            <NotifyReceiptModal :product-title="productTitle()" :product-img="product.images[0]"/>
         </ModalWindowComponent>
     </Teleport>
 </template>
@@ -65,6 +70,7 @@ import { useCartStore } from '@/stores/Cart';
 import ModalWindowComponent from "@/components/ModalWindowComponent.vue";
 import {useModalStatesStore} from "@/stores/modalStates.js";
 import FoundCheaperModal from "@/modals/FoundCheaperModal.vue";
+import NotifyReceiptModal from "@/modals/NotifyReceiptModal.vue";
 
 const props = defineProps({
     product:Object

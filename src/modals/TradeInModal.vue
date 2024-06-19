@@ -5,7 +5,7 @@
             <TextInputElement :fsize="16" :name="'productName'" :type="'text'" :placeholder="'какое устройство вы хотите сдать?'" :validation="'other'"/>
             <div class="trade-in__input">
                 <TextInputElement :placeholder="'+7'" :fsize="24" :name="'phone'" :type="'tel'" :validation="'phone'"/>
-                <CasualButton :title="'обменять устройство'" :width="'246'"/>
+                <CasualButton :title="'обменять устройство'" :width="246"/>
             </div>
         </form>
     </div>
