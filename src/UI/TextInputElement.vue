@@ -1,20 +1,22 @@
 <template>
-    <div class="custom-input">
-        <input v-if="type === 'tel'" class="custom-input__item" @focus="" 
-        :type="type || 'text'" 
-        :style="{fontSize: `${fsize}px`}" 
-        :placeholder="props.placeholder" 
-        v-model="value" 
-        @input="phoneCorrector($event)"
-        >
-        <input v-else class="custom-input__item" @focus="" 
-        :type="type || 'text'" 
-        :style="{fontSize: `${fsize}px`}" 
-        :placeholder="props.placeholder" 
-        v-model="value" 
-        >
+    <div class="custom-input__container">
+        <div class="custom-input">
+            <input v-if="type === 'tel'" class="custom-input__item" @focus=""
+            :type="type || 'text'"
+            :style="{fontSize: `${fsize}px`}"
+            :placeholder="props.placeholder"
+            v-model="value"
+            @input="phoneCorrector($event)"
+            >
+            <input v-else class="custom-input__item" @focus=""
+            :type="type || 'text'"
+            :style="{fontSize: `${fsize}px`}"
+            :placeholder="props.placeholder"
+            v-model="value"
+            >
+        </div>
+        <span class="custom-input__error">{{ errorMessage }}</span>
     </div>
-    <span class="custom-input__error">{{ errorMessage }}</span>
 </template>
 
 <script setup>

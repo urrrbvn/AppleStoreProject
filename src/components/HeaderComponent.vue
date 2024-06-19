@@ -24,7 +24,7 @@
                 <img src="../assets/images/PhoneIcon.svg" width="24px" height="24px">
                 <span>+7 812 561 96 62</span>
             </a>
-            <p class="header__phone-link" @click="modalStates.ModalToggle()">
+            <p class="header__phone-link" @click="modalStates.ModalToggle('getCall')">
                 Вам перезвонить?
             </p>
         </div>
@@ -46,7 +46,7 @@
         </div>
     </main>
     <Teleport to="body">
-        <ModalWindowComponent v-if="modalStates.ModalStatus">
+        <ModalWindowComponent v-if="modalStates.ModalStatus === 'getCall'">
             <GetCallModal/>
         </ModalWindowComponent>
     </Teleport>

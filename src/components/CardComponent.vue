@@ -37,17 +37,22 @@
             </p>
         </div>
         <AddToCartButton v-if="product.is_available === true && windowWidth > 1200"/>
-        <CasualButton v-if="product.is_available === false && windowWidth > 1200" 
+        <CasualButton v-if="product.is_available === false && windowWidth > 1200"
                                                         :title="'сообщить о поступлении'"
                                                         :theme="'clearWhite'"
                                                         :width="`266`"
         />
         <a href="#" class="card__notify-recepit" v-if="product.is_available === false && windowWidth < 1200">Сообщить о поступлении</a>
         <div class="card__additional" v-if="product.is_available === true">
-            <a href="#">Хочу дешевле</a>
+            <a @click="modalStates.ModalToggle(`foundCheaper${product.id}`)">Хочу дешевле</a>
             <p>купить в 1 клик</p>
         </div>
     </div>
+    <Teleport to="body">
+        <ModalWindowComponent v-if="modalStates.ModalStatus === `foundCheaper${product.id}`">
+            <FoundCheaperModal/>
+        </ModalWindowComponent>
+    </Teleport>
 </template>
 
 <script setup>
@@ -56,10 +61,15 @@ import StarsComponent from '@/UI/StarsComponent.vue';
 import IconButton from '@/UI/IconButton.vue';
 import AddToCartButton from '@/UI/AddToCartButton.vue';
 import CasualButton from '@/UI/CasualButton.vue';
+import ModalWindowComponent from "@/components/ModalWindowComponent.vue";
+import {useModalStatesStore} from "@/stores/modalStates.js";
+import FoundCheaperModal from "@/modals/FoundCheaperModal.vue";
 
 const props = defineProps({
     product:Object
 })
+
+const modalStates = useModalStatesStore()
 
 const windowWidth = ref(window.innerWidth);
 
@@ -79,7 +89,7 @@ onUnmounted(() => {
 const productTitle = () =>{
     let product = props.product
     let titleType = product.category
-    
+
     if(titleType !== 'Аксессуары' && titleType !== 'Гаджеты'){
         let special = product.characteristics.find(elem => elem.characteristic === 'Объем встроенной памяти')
         // let title = ''

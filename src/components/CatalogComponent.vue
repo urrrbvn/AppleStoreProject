@@ -9,7 +9,7 @@
         </div>
         <div class="catalog__grid" v-if="status === 'new'">
             <CardComponent v-for="product in catalog.getNewest"
-                           :product="product" 
+                           :product="product"
             ></CardComponent>
         </div>
     </div>
