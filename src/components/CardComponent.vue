@@ -36,8 +36,8 @@
                 Мы можем сообщить вам, когда товар появится в наличии
             </p>
         </div>
-        <AddToCartButton v-if="product.is_available === true && windowWidth > 1200"/>
-        <CasualButton v-if="product.is_available === false && windowWidth > 1200"
+        <AddToCartButton v-if="product.is_available === true && windowWidth > 1200" :product="props.product"/>
+        <CasualButton v-if="product.is_available === false && windowWidth > 1200" 
                                                         :title="'сообщить о поступлении'"
                                                         :theme="'clearWhite'"
                                                         :width="`266`"
@@ -61,6 +61,7 @@ import StarsComponent from '@/UI/StarsComponent.vue';
 import IconButton from '@/UI/IconButton.vue';
 import AddToCartButton from '@/UI/AddToCartButton.vue';
 import CasualButton from '@/UI/CasualButton.vue';
+import { useCartStore } from '@/stores/Cart';
 import ModalWindowComponent from "@/components/ModalWindowComponent.vue";
 import {useModalStatesStore} from "@/stores/modalStates.js";
 import FoundCheaperModal from "@/modals/FoundCheaperModal.vue";
