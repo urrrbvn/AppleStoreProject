@@ -8,7 +8,6 @@
   gap: 16px;
 
 }
-
 .found-cheaper__text{
   @include flexCol();
   max-width: 357px;
@@ -23,29 +22,24 @@
 .found-cheaper__form{
   display: flex;
   flex-wrap: wrap;
-
   justify-content: center;
   gap: 8px;
   max-width: 461px;
-
   .found-cheaper__input{
     @include flexRow();
     gap: 8px;
   }
-
+  .found-cheaper__input{
+    display: grid;
+    grid-template-columns: 204px 249px;
+  }
   .custom-input{
     height: 56px;
-    //width: 100%;
-  }
-
-  .custom-input__container{
-    width: 100%;
-  }
-
-  .custom-input__error{
-    //display: none;
   }
   .custom-input__item{
     color: $smallText_5;
+  }
+  .casualBtn{
+    margin-top: 8px;
   }
 }

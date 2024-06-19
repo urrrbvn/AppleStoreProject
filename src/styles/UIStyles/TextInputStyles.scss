@@ -10,12 +10,22 @@
     border: 1px solid #DBDBDB;
     border-radius: 8px;
 }
+.custom-input__container{
+    width: 100%;
+}
 .custom-input__item{
     border: none;
     outline: none;
     width: 100%;
 }
+.custom-input__item::placeholder{
+    font-family: SF-Pro;
+}
 .custom-input__error{
-    color: red;
+    display: flex;
+    justify-content: flex-end;
     position: relative;
+    color: red;
+    text-wrap: nowrap;
+    align-items: center;
 }

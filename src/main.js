@@ -32,7 +32,7 @@ configure({
     validateOnChange: false,
     generateMessage: (ctx) =>{
         const message = {
-            required: "поле обязательно к заполнению",
+            required: "обязательно к заполнению",
             phoneNum: "неверный формат номера"
         };
         return message[ctx.rule.name]
