@@ -15,10 +15,10 @@
         <div class="toggled-block" v-if="result.length > 0">
             <div class="search-result">
                 <div class="search-result__item" v-for="product in result" :key="product.id" @click="'/'">
-                    <img :src="`src/assets/images/${product.image}.png`" width="64px" height="64px">
+                    <img :src="`http://localhost:1452/${product.images[0]}`" width="64px" height="64px">
                     <div class="search-result__text">
-                        <h2>{{ product.title }}</h2>
-                        <p>{{ product.discountPrice }} ₽</p>
+                        <h2>{{ catalog.productTitle(product) }}</h2>
+                        <p>{{ product.discount_price !== null ? product.discount_price : product.price }} ₽</p>
                     </div>
                     <a href="/">Подробнее</a>
                 </div>
@@ -72,4 +72,6 @@ const closeSearch = () =>{
 onMounted(() => {
     console.log(catalog.allProducts)
 })
+
+
 </script>
